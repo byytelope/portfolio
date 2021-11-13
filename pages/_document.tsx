@@ -16,7 +16,6 @@ export default class Doc extends Document {
             rel="stylesheet"
           />
         </Head>
-
         <body>
           <Main />
           <NextScript />

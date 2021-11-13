@@ -1,15 +1,8 @@
-import Head from "next/head";
-import Header from "../components/header";
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
-    <div className="bg-bgPrimary h-screen">
-      <Head>
-        <title>Portfolio</title>
-        <meta name="description" content="Made using NextJS" />
-        <meta name="theme-color" content="#1b222d" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <div className="h-full w-full flex flex-col justify-center items-center">
       <Header />
     </div>
   );
