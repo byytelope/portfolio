@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import TypewriterComponent from "typewriter-effect";
 
 export default function Header() {
