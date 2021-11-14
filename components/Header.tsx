@@ -3,12 +3,12 @@ import TypewriterComponent from "typewriter-effect";
 export default function Header() {
   return (
     <div className="flex flex-col justify-center h-screen">
-      <div className="flex w-full">
+      <div className="flex w-full pb-4">
         <TypewriterComponent
           onInit={(tw) => {
-            tw.typeString("hello")
+            tw.typeString("hello,")
               .pauseFor(1000)
-              .typeString(", my name is")
+              .typeString(" my name is")
               .start();
           }}
           options={{
@@ -17,8 +17,10 @@ export default function Header() {
           }}
         />
       </div>
-      <span className="pt-4 pb-2 text-6xl font-bold">Mohamed Shadhaan</span>
-      <p className="text-xl text-greyBlue">
+      <span className="pb-2 text-6xl font-bold tracking-wide">
+        Mohamed Shadhaan
+      </span>
+      <p className="text-xl tracking-wider text-greyBlue">
         I&apos;m a software engineer specialising in building frontends
         <br /> for both the{" "}
         <span className="font-mono text-aqua">{"<web/> && Mobile();"}</span>
