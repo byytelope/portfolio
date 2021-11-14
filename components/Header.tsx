@@ -1,4 +1,6 @@
+import { motion } from "framer-motion";
 import TypewriterComponent from "typewriter-effect";
+import ScrollDownAnimation from "./ScrollDownAnimation";
 
 export default function Header() {
   return (
@@ -8,7 +10,7 @@ export default function Header() {
           onInit={(tw) => {
             tw.typeString("hello,")
               .pauseFor(1000)
-              .typeString(" my name is")
+              .typeString(" my name is;")
               .start();
           }}
           options={{
@@ -17,14 +19,32 @@ export default function Header() {
           }}
         />
       </div>
-      <span className="pb-2 text-6xl font-bold tracking-wide">
+      <motion.span
+        className="pb-2 text-6xl font-bold tracking-wide"
+        initial={{ opacity: 0, y: 25 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ ease: "easeOut", delay: 3, duration: 1 }}
+      >
         Mohamed Shadhaan
-      </span>
-      <p className="text-xl tracking-wider text-greyBlue">
+      </motion.span>
+      <motion.p
+        className="text-xl tracking-wider text-greyBlue"
+        initial={{ opacity: 0, y: 25 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ ease: "easeOut", delay: 3.1, duration: 1 }}
+      >
         I&apos;m a software engineer specialising in building frontends
         <br /> for both the{" "}
         <span className="font-mono text-aqua">{"<web/> && Mobile();"}</span>
-      </p>
+      </motion.p>
+      <motion.div
+        className="absolute left-1/2 bottom-32"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ ease: "easeOut", delay: 3.3, duration: 1 }}
+      >
+        <ScrollDownAnimation />
+      </motion.div>
     </div>
   );
 }

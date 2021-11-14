@@ -6,7 +6,7 @@ export default function About() {
       <div className="flex w-full pb-4">
         <TypewriterComponent
           onInit={(tw) => {
-            tw.typeString("about me").start();
+            tw.typeString("about me;").start();
           }}
           options={{
             wrapperClassName: "text-xl font-mono text-aqua",
@@ -19,65 +19,15 @@ export default function About() {
           I have always been interested in computers and the software side of
           their inner-workings. So, when covid-19 came around and I needed to
           find a hobby, it was natural for me to jump straight into coding. I
-          had chosen{" "}
-          <a
-            className="font-mono underline text-aqua"
-            href="https://python.org"
-            target="_blank"
-            rel="noreferrer"
-          >
-            python
-          </a>{" "}
-          as my starting point, but just a few months later, the perfect
+          had chosen <span className="text-offWhite font-mono">Python</span> as
+          my starting point, but just a few months later, the perfect
           opportunity came up for me to take up web development, as a couple of
           my close friends needed a website for their startup café. Fast-forward
           to today, I am now comfortably proficient in{" "}
-          <span className="font-mono text-aqua">
-            <a
-              className="underline"
-              href="https://nodejs.org"
-              target="_blank"
-              rel="noreferrer"
-            >
-              node.js
-            </a>
-            ,{" "}
-            <a
-              className="underline"
-              href="https://deno.land"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Deno
-            </a>
-            ,{" "}
-            <a
-              className="underline"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noreferrer"
-            >
-              React
-            </a>
-            ,{" "}
-            <a
-              className="underline"
-              href="https://nextjs.org"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Next.js
-            </a>
+          <span className="text-offWhite font-mono">
+            Node.js, Deno, React, Next.js,
           </span>{" "}
-          and even{" "}
-          <a
-            className="font-mono underline text-aqua"
-            href="https://flutter.dev"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Flutter.
-          </a>
+          and even <span className="text-offWhite font-mono">Flutter</span>
         </p>
         <div className="flex w-72 h-72 bg-darkblue" />
       </div>
