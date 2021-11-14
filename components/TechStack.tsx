@@ -10,10 +10,11 @@ import {
   SiNextdotjs,
   SiFlutter,
 } from "react-icons/si";
+import { mainSectionClassName } from "../styles/classnames";
 
 export default function TechStack() {
   return (
-    <div className="flex flex-col justify-center h-screen">
+    <div className={mainSectionClassName}>
       <div className="flex w-full pb-4">
         <TypewriterComponent
           onInit={(tw) => {
@@ -25,7 +26,7 @@ export default function TechStack() {
           }}
         />
       </div>
-      <div className="grid grid-cols-2 gap-x-32 gap-y-4 font-mono text-xl text-greyBlue">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-32 gap-y-4 font-mono text-lg xs:text-xl text-greyBlue">
         <a href="https://python.org" target="_blank" rel="noreferrer">
           <span className="text-offWhite">
             &gt; <SiPython className="inline-block" />

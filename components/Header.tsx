@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import TypewriterComponent from "typewriter-effect";
+import { BsArrowDown } from "react-icons/bs";
 import ScrollDownAnimation from "./ScrollDownAnimation";
 
 export default function Header() {
@@ -20,7 +21,7 @@ export default function Header() {
         />
       </div>
       <motion.span
-        className="pb-2 text-6xl font-bold tracking-wide"
+        className="pb-2 text-4xl xs:text-5xl md:text-6xl font-bold tracking-wide"
         initial={{ opacity: 0, y: 25 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ ease: "easeOut", delay: 3, duration: 1 }}
@@ -28,23 +29,26 @@ export default function Header() {
         Mohamed Shadhaan
       </motion.span>
       <motion.p
-        className="text-xl tracking-wider text-greyBlue"
+        className="text-lg xs:text-xl tracking-wider text-greyBlue"
         initial={{ opacity: 0, y: 25 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ ease: "easeOut", delay: 3.1, duration: 1 }}
       >
         I&apos;m a software engineer specialising in building frontends
-        <br /> for both the{" "}
+        <br className="hidden lg:block" /> for both the{" "}
         <span className="font-mono text-aqua">{"<web/> && Mobile();"}</span>
       </motion.p>
       <motion.div
-        className="absolute left-1/2 bottom-32"
+        className="w-full mt-32 hidden md:flex justify-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ ease: "easeOut", delay: 3.3, duration: 1 }}
       >
         <ScrollDownAnimation />
       </motion.div>
+      <div className="w-full text-greyBlue text-4xl mt-32 md:hidden flex justify-center animate-bounce">
+        <BsArrowDown />
+      </div>
     </div>
   );
 }
