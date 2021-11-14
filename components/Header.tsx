@@ -5,7 +5,10 @@ import ScrollDownAnimation from "./ScrollDownAnimation";
 
 export default function Header() {
   return (
-    <div className="flex flex-col justify-center h-screen">
+    <div
+      className="flex flex-col justify-center h-screen"
+      style={{ scrollSnapAlign: "start" }}
+    >
       <div className="flex w-full pb-4">
         <TypewriterComponent
           onInit={(tw) => {

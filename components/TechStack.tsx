@@ -13,7 +13,10 @@ import {
 
 export default function TechStack() {
   return (
-    <div className="flex flex-col justify-start md:justify-center md:h-screen py-16 md:py-0 w-full">
+    <div
+      className="flex flex-col justify-start md:justify-center md:h-screen py-16 md:py-0 w-full"
+      style={{ scrollSnapAlign: "start" }}
+    >
       <div className="flex w-full pb-4">
         <TypewriterComponent
           onInit={(tw) => {
