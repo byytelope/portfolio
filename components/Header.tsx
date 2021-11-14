@@ -49,9 +49,14 @@ export default function Header() {
       >
         <ScrollDownAnimation />
       </motion.div>
-      <div className="w-full text-greyBlue text-4xl mt-32 md:hidden flex justify-center animate-bounce">
+      <motion.div
+        className="w-full text-greyBlue text-4xl mt-32 md:hidden flex justify-center animate-bounce"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ ease: "easeOut", delay: 3.3, duration: 1 }}
+      >
         <BsArrowDown />
-      </div>
+      </motion.div>
     </div>
   );
 }
