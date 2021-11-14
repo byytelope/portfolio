@@ -1,5 +1,5 @@
 import TypewriterComponent from "typewriter-effect";
-import { mainSectionClassName } from "../styles/classnames";
+import { mainSectionClassName } from "../utils/classnames";
 
 export default function About() {
   return (

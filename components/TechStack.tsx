@@ -10,7 +10,7 @@ import {
   SiNextdotjs,
   SiFlutter,
 } from "react-icons/si";
-import { mainSectionClassName } from "../styles/classnames";
+import { mainSectionClassName } from "../utils/classnames";
 
 export default function TechStack() {
   return (
