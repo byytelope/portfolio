@@ -30,7 +30,7 @@ export default function About() {
           </span>{" "}
           and even <span className="text-offWhite font-mono">Flutter</span>
         </p>
-        <div className="flex w-full xs:w-72 h-72 bg-darkblue mt-8 lg:mt-0" />
+        <div className="flex w-full lg:w-72 h-72 bg-darkblue mt-8 lg:mt-0" />
       </div>
     </div>
   );
