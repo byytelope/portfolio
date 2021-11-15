@@ -1,5 +1,5 @@
 import { ReactChild } from "react";
-import CommonHead from "../components/CommonHead";
+import CommonHead from "./CommonHead";
 
 export default function Layout({ children }: { children: ReactChild }) {
   return (

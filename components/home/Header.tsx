@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import TypewriterComponent from "typewriter-effect";
 import { BsArrowDown } from "react-icons/bs";
-import ScrollDownAnimation from "./ScrollDownAnimation";
+import ScrollDownAnimation from "../ScrollDownAnimation";
 
 export default function Header() {
   return (
     <div
       className="flex flex-col justify-center h-screen"
-      style={{ scrollSnapAlign: "start" }}
+      // style={{ scrollSnapAlign: "start" }}
     >
       <div className="flex w-full pb-4">
         <TypewriterComponent
@@ -42,7 +42,7 @@ export default function Header() {
         <span className="font-mono text-aqua">{"<web/> && Mobile();"}</span>
       </motion.p>
       <motion.div
-        className="w-full mt-32 hidden md:flex justify-center"
+        className="w-full mt-32 hidden lg:flex justify-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ ease: "easeOut", delay: 3.3, duration: 1 }}
@@ -50,7 +50,7 @@ export default function Header() {
         <ScrollDownAnimation />
       </motion.div>
       <motion.div
-        className="w-full text-greyBlue text-4xl mt-32 md:hidden flex justify-center animate-bounce"
+        className="w-full text-greyBlue text-4xl mt-32 lg:hidden flex justify-center animate-bounce"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ ease: "easeOut", delay: 3.3, duration: 1 }}

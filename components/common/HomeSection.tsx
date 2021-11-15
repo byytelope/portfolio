@@ -1,15 +1,19 @@
+import { ReactNode } from "react";
 import TypewriterComponent from "typewriter-effect";
 
-export default function Employers() {
+export default function HomeSection({
+  children,
+  title,
+}: {
+  children: ReactNode;
+  title: string;
+}) {
   return (
-    <div
-      className="flex flex-col justify-start md:justify-center md:h-screen py-16 md:py-0 w-full"
-      style={{ scrollSnapAlign: "start" }}
-    >
+    <div className="flex flex-col justify-start md:justify-center md:h-screen py-16 md:py-0 w-full">
       <div className="flex w-full pb-4">
         <TypewriterComponent
           onInit={(tw) => {
-            tw.typeString("where i've worked;").start();
+            tw.typeString(`${title};`).start();
           }}
           options={{
             wrapperClassName: "text-xl font-mono text-aqua",
@@ -17,7 +21,7 @@ export default function Employers() {
           }}
         />
       </div>
-      <div className="flex"></div>
+      <div>{children}</div>
     </div>
   );
 }
