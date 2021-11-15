@@ -9,6 +9,6 @@
   }
 
   a {
-    @apply text-yellow;
+    @apply text-yellow hover:text-offWhite transition-colors duration-300;
   }
 }
