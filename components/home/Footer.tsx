@@ -8,7 +8,13 @@ const contactsArray = [
 
 const contacts = contactsArray.map((contact, i) => {
   return (
-    <a key={`link${i}`} href={contact.link} target="_blank" rel="noreferrer">
+    <a
+      className="p-2 rounded-lg flex"
+      key={`link${i}`}
+      href={contact.link}
+      target="_blank"
+      rel="noreferrer"
+    >
       {contact.icon}
     </a>
   );
@@ -17,17 +23,17 @@ const contacts = contactsArray.map((contact, i) => {
 export default function Footer() {
   return (
     <footer className="text-center py-16">
-      <div className="space-x-8 text-2xl py-8">{contacts}</div>
+      <div className="space-x-8 text-2xl py-8 flex justify-center">
+        {contacts}
+      </div>
       <a
-        className="font-mono"
+        className="font-mono p-2 rounded-lg"
         href="https://github.com/byytelope/portfolio"
         target="_blank"
         rel="noreferrer"
       >
         {"<a> "}
-        <span className="text-offWhite">
-          Check out the code for this website
-        </span>
+        <span className="text-offWhite">View website code</span>
         {" </a>"}
       </a>
     </footer>

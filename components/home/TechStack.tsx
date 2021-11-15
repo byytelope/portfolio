@@ -62,6 +62,7 @@ const techList = stackArray.map((stack, i) => {
   return (
     <a
       key={stack.name + i.toString()}
+      className="p-2 rounded-lg max-w-max"
       href={stack.link}
       target="_blank"
       rel="noreferrer"

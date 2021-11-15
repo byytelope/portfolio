@@ -8,6 +8,14 @@
     @apply text-offWhite;
   }
 
+  * {
+    @apply focus:outline-none focus:ring-2 focus:ring-greyBlue;
+  }
+
+  ::selection {
+    @apply bg-greyBlue;
+  }
+
   a {
     @apply text-yellow hover:text-offWhite transition-colors duration-300;
   }
