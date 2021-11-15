@@ -9,7 +9,7 @@ export default function HomeSection({
   title: string;
 }) {
   return (
-    <div className="flex flex-col justify-start md:justify-center md:h-screen py-16 md:py-0 w-full">
+    <section className="flex flex-col justify-start md:justify-center md:h-screen py-16 md:py-0 w-full">
       <div className="flex w-full pb-4">
         <TypewriterComponent
           onInit={(tw) => {
@@ -22,6 +22,6 @@ export default function HomeSection({
         />
       </div>
       <div>{children}</div>
-    </div>
+    </section>
   );
 }

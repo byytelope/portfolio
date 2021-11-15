@@ -16,9 +16,12 @@ export default function CommonHead({
       <title>{title ?? "Mohamed Shadhaan"}</title>
       <meta
         name="description"
-        content={description ?? "Made with ❤️ using Next.js"}
+        content={
+          description ??
+          "Hi! This is my personal portfolio. I'm a web developer currently based in Hithadhoo, Addu City, Maldives."
+        }
       />
-      <meta name="theme-color" content={themeColor ?? "#1b222d"} />
+      <meta name="theme-color" content={themeColor ?? "#1B222D"} />
       <link rel="icon" href="/favicon.ico" />
     </Head>
   );

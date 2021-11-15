@@ -10,12 +10,12 @@ module.exports = {
     colors: {
       transparent: "transparent",
       current: "currentColor",
-      offWhite: "#fff8ee",
-      aqua: "#7eddde",
-      greyBlue: "#99a8c5",
-      darkblue: "#2a3445",
-      darkerBlue: "#1b222d",
-      yellow: "#ffd484",
+      offWhite: "#FFF8EE",
+      aqua: "#7EDDDE",
+      greyBlue: "#99A8C5",
+      darkblue: "#2A3445",
+      darkerBlue: "#1B222D",
+      yellow: "#FFD484",
     },
   },
   variants: {
