@@ -22,7 +22,7 @@ const contacts = contactsArray.map((contact, i) => {
 
 export default function Footer() {
   return (
-    <footer className="text-center py-16">
+    <footer className="text-center py-16 flex flex-col">
       <div className="space-x-8 text-2xl py-8 flex justify-center">
         {contacts}
       </div>
@@ -36,6 +36,9 @@ export default function Footer() {
         <span className="text-offWhite">View website code</span>
         {" </a>"}
       </a>
+      <span className="font-mono text-greyBlue text-sm">
+        Designed and built by Mohamed Shadhaan
+      </span>
     </footer>
   );
 }

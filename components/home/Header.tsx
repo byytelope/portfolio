@@ -1,9 +1,11 @@
+import { MutableRefObject } from "react";
 import { motion } from "framer-motion";
-import TypewriterComponent from "typewriter-effect";
+import { WindupChildren, Pace, Pause, CharWrapper } from "windups";
 import { BsArrowDown } from "react-icons/bs";
 import ScrollDownAnimation from "../ScrollDownAnimation";
 import Button from "../Button";
-import { MutableRefObject } from "react";
+import Cursor from "../Cursor";
+import SmoothChar from "../SmoothChar";
 
 export default function Header({
   contactsRef,
@@ -12,25 +14,24 @@ export default function Header({
 }) {
   return (
     <section className="flex flex-col justify-center h-screen">
-      <div className="flex w-full pb-4">
-        <TypewriterComponent
-          onInit={(tw) => {
-            tw.typeString("hello,")
-              .pauseFor(1000)
-              .typeString(" my name is;")
-              .start();
-          }}
-          options={{
-            wrapperClassName: "text-xl font-mono text-aqua",
-            delay: 70,
-          }}
-        />
+      <div className="flex w-full pb-4 items-center">
+        <WindupChildren>
+          <Pace ms={70}>
+            <span className="text-xl font-mono text-aqua">
+              <CharWrapper element={SmoothChar}>
+                hello, <Pause ms={1000} />
+                my name is
+              </CharWrapper>
+            </span>
+          </Pace>
+        </WindupChildren>
+        <Cursor />
       </div>
       <motion.span
         className="pb-2 text-4xl xs:text-5xl md:text-6xl font-bold tracking-wide"
         initial={{ opacity: 0, y: 25 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ ease: "easeOut", delay: 3, duration: 1 }}
+        transition={{ ease: "easeOut", delay: 2.5, duration: 1 }}
       >
         Mohamed Shadhaan
       </motion.span>
@@ -38,7 +39,7 @@ export default function Header({
         className="text-lg xs:text-xl tracking-wider text-greyBlue"
         initial={{ opacity: 0, y: 25 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ ease: "easeOut", delay: 3.1, duration: 1 }}
+        transition={{ ease: "easeOut", delay: 2.6, duration: 1 }}
       >
         I&apos;m a software engineer specialising in building frontends
         <br className="hidden lg:block" /> for both the{" "}
@@ -48,7 +49,7 @@ export default function Header({
         className="py-8"
         initial={{ opacity: 0, y: 25 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ ease: "easeOut", delay: 3.2, duration: 1 }}
+        transition={{ ease: "easeOut", delay: 2.7, duration: 1 }}
       >
         <Button
           onClick={() => {
@@ -67,7 +68,7 @@ export default function Header({
         className="w-full mt-24 hidden lg:flex justify-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ ease: "easeOut", delay: 3.3, duration: 1 }}
+        transition={{ ease: "easeOut", delay: 3, duration: 1 }}
       >
         <ScrollDownAnimation />
       </motion.div>
@@ -75,7 +76,7 @@ export default function Header({
         className="w-full text-greyBlue text-4xl mt-24 lg:hidden flex justify-center animate-bounce"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ ease: "easeOut", delay: 3.3, duration: 1 }}
+        transition={{ ease: "easeOut", delay: 3, duration: 1 }}
       >
         <BsArrowDown />
       </motion.div>
