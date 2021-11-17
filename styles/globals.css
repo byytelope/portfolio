@@ -16,7 +16,20 @@
     @apply bg-greyBlue;
   }
 
+  ::placeholder {
+    @apply text-darkblue opacity-100;
+  }
+
+  ::-webkit-input-placeholder {
+    @apply text-darkblue;
+  }
+
   a {
-    @apply text-yellow hover:text-offWhite transition-colors duration-300;
+    @apply text-yellow hover:text-offWhite transition-colors duration-300 font-mono;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
   }
 }

@@ -1,9 +1,21 @@
 import { FiGithub, FiInstagram, FiTwitter } from "react-icons/fi";
 
 const contactsArray = [
-  { icon: <FiGithub />, link: "https://github.com/byytelope" },
-  { icon: <FiTwitter />, link: "https://twitter.com/byytelope" },
-  { icon: <FiInstagram />, link: "https://www.instagram.com/mohamed_shadhaan" },
+  {
+    icon: <FiGithub />,
+    link: "https://github.com/byytelope",
+    ariaLabel: "GitHub",
+  },
+  {
+    icon: <FiTwitter />,
+    link: "https://twitter.com/byytelope",
+    ariaLabel: "Twitter",
+  },
+  {
+    icon: <FiInstagram />,
+    link: "https://www.instagram.com/mohamed_shadhaan",
+    ariaLabel: "Instagram",
+  },
 ];
 
 const contacts = contactsArray.map((contact, i) => {
@@ -14,6 +26,7 @@ const contacts = contactsArray.map((contact, i) => {
       href={contact.link}
       target="_blank"
       rel="noreferrer"
+      aria-label={contact.ariaLabel}
     >
       {contact.icon}
     </a>
@@ -27,7 +40,7 @@ export default function Footer() {
         {contacts}
       </div>
       <a
-        className="font-mono p-2 rounded-lg"
+        className="p-2 rounded-lg"
         href="https://github.com/byytelope/portfolio"
         target="_blank"
         rel="noreferrer"

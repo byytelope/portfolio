@@ -1,13 +1,13 @@
 import { useCallback, useRef } from "react";
-import HomeSection from "../components/home/HomeSection";
+import { useInView } from "react-intersection-observer";
 import About from "../components/home/About";
 import Contact from "../components/home/Contact";
 import Employers from "../components/home/Employers";
 import Footer from "../components/home/Footer";
 import Header from "../components/home/Header";
+import HomeSection from "../components/home/HomeSection";
 import Projects from "../components/home/Projects";
 import TechStack from "../components/home/TechStack";
-import { useInView } from "react-intersection-observer";
 
 export default function Home() {
   const [aboutRef, aboutInView] = useInView({ triggerOnce: true });

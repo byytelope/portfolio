@@ -29,16 +29,16 @@ export default function Header({
       </div>
       <motion.span
         className="pb-2 text-4xl xs:text-5xl md:text-6xl font-bold tracking-wide"
-        initial={{ opacity: 0, y: 25 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 25, pointerEvents: "none" }}
+        animate={{ opacity: 1, y: 0, pointerEvents: "auto" }}
         transition={{ ease: "easeOut", delay: 2.5, duration: 1 }}
       >
         Mohamed Shadhaan
       </motion.span>
       <motion.p
         className="text-lg xs:text-xl tracking-wider text-greyBlue"
-        initial={{ opacity: 0, y: 25 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 25, pointerEvents: "none" }}
+        animate={{ opacity: 1, y: 0, pointerEvents: "auto" }}
         transition={{ ease: "easeOut", delay: 2.6, duration: 1 }}
       >
         I&apos;m a software engineer specialising in building frontends
@@ -47,8 +47,8 @@ export default function Header({
       </motion.p>
       <motion.div
         className="py-8"
-        initial={{ opacity: 0, y: 25 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 25, pointerEvents: "none" }}
+        animate={{ opacity: 1, y: 0, pointerEvents: "auto" }}
         transition={{ ease: "easeOut", delay: 2.7, duration: 1 }}
       >
         <Button
@@ -56,7 +56,7 @@ export default function Header({
             if (contactsRef !== null) {
               contactsRef.current?.scrollIntoView({
                 behavior: "smooth",
-                block: "start",
+                block: "center",
               });
             }
           }}

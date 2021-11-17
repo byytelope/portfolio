@@ -74,7 +74,7 @@ const techList = stackArray.map((stack, i) => {
 
 export default function TechStack() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-32 gap-y-4 pt-2 font-mono text-lg xs:text-xl">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-32 gap-y-4 pt-2 text-lg xs:text-xl">
       {techList}
     </div>
   );
