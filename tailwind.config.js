@@ -21,7 +21,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      mixBlendMode: ["hover", "focus"],
+    },
   },
   plugins: [require("@tailwindcss/forms")],
 };

@@ -25,7 +25,7 @@
   }
 
   a {
-    @apply text-yellow hover:text-offWhite transition-colors duration-300 font-mono;
+    @apply text-yellow hover:text-offWhite transition-colors duration-300 font-mono cursor-pointer;
   }
 
   input:-webkit-autofill,
