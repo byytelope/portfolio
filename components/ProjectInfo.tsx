@@ -39,6 +39,7 @@ export default function ProjectInfo({
             target="_blank"
             rel="noreferrer"
             className="text-2xl"
+            aria-label={projectInfo.client}
           >
             <FiExternalLink />
           </a>
