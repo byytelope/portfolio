@@ -1,34 +1,34 @@
 // import { Autoplay } from "swiper";
 // import { Swiper, SwiperSlide } from "swiper/react";
 // import ProjectInfo from "../ProjectInfo";
-import tchaImage from "../../data/tcha.png";
+// import tchaImage from "../../data/tcha.png";
 
 // import "swiper/css";
 // import "swiper/css/autoplay";
 
-const projectsData = [
-  {
-    client: "The Coffee House Addu",
-    year: "2020",
-    technologies: ["React", "Tailwindcss"],
-    image: tchaImage,
-    link: "https://thecoffeehouseaddu.vercel.app",
-  },
-  {
-    client: "The Coffee House Addu",
-    year: "2020",
-    technologies: ["React", "Tailwindcss"],
-    image: tchaImage,
-    link: "https://thecoffeehouseaddu.vercel.app",
-  },
-  {
-    client: "The Coffee House Addu",
-    year: "2020",
-    technologies: ["React", "Tailwindcss"],
-    image: tchaImage,
-    link: "https://thecoffeehouseaddu.vercel.app",
-  },
-];
+// const projectsData = [
+//   {
+//     client: "The Coffee House Addu",
+//     year: "2020",
+//     technologies: ["React", "Tailwindcss"],
+//     image: tchaImage,
+//     link: "https://thecoffeehouseaddu.vercel.app",
+//   },
+//   {
+//     client: "The Coffee House Addu",
+//     year: "2020",
+//     technologies: ["React", "Tailwindcss"],
+//     image: tchaImage,
+//     link: "https://thecoffeehouseaddu.vercel.app",
+//   },
+//   {
+//     client: "The Coffee House Addu",
+//     year: "2020",
+//     technologies: ["React", "Tailwindcss"],
+//     image: tchaImage,
+//     link: "https://thecoffeehouseaddu.vercel.app",
+//   },
+// ];
 
 // const swipers = projectsData.map((project) => {
 //   return (
