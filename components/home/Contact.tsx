@@ -1,42 +1,68 @@
 import { useState } from "react";
+import { useForm } from "../../utils/hooks/useForm";
 import Button from "../Button";
 import FormField from "../FormField";
 
 export default function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent<HTMLInputElement>) => {
-    e.preventDefault();
-
-    const data = {
-      name,
-      email,
-      subject,
-      message,
-    };
-
-    fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
+  const { data, handleChange, handleSubmit, errors } = useForm({
+    initialValues: {
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    },
+    validations: {
+      name: {
+        required: {
+          value: true,
+          message: "name pls",
+        },
+        pattern: {
+          value: /^[A-Za-z\s]*$/,
+          message: "real name pls",
+        },
       },
-      body: JSON.stringify(data),
-    }).then((res) => {
-      if (res.status === 200) {
-        console.log("Mail sent");
-        setName("");
-        setEmail("");
-        setSubject("");
-        setMessage("");
-        setSubmitted(true);
-      }
-    });
-  };
+      email: {
+        required: {
+          value: true,
+          message: "email pls",
+        },
+        pattern: {
+          value: /^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$/,
+          message: "valid email pls",
+        },
+      },
+      subject: {},
+      message: {
+        required: {
+          value: true,
+          message: "type something",
+        },
+        custom: {
+          isValid: (val) => val.length < 1000,
+          message: "tldr pls",
+        },
+      },
+    },
+    onSubmit: () => {
+      fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }).then((res) => {
+        if (res.status === 200) {
+          console.log("Mail sent");
+          setSubmitted(true);
+        }
+      });
+      console.log("Mail sent");
+      setSubmitted(true);
+    },
+  });
 
   return (
     <div>
@@ -47,41 +73,44 @@ export default function Contact() {
         </a>
       </span>
       <form className="pt-8">
-        <div className="flex flex-col lg:flex-row lg:space-x-4 space-y-8 lg:space-y-0">
+        <div className="flex flex-col lg:flex-row lg:space-x-4 space-y-4 lg:space-y-0">
           <FormField
             id="contactFormName"
             label="name"
+            value={data.name}
             placeholder="your/company name"
-            onChange={(e) => setName(e.target.value)}
+            errorText={errors.name}
+            onChange={handleChange("name")}
           />
           <FormField
             id="contactFormEmail"
             label="email"
+            value={data.email}
             type="email"
             placeholder="your@email.com"
-            onChange={(e) => setEmail(e.target.value)}
+            errorText={errors.email}
+            onChange={handleChange("email")}
           />
         </div>
-        <div className="py-8 space-y-8">
+        <div className="py-4 space-y-4">
           <FormField
             id="contactFormSubject"
             label="subject"
+            value={data.subject}
             placeholder="looking to hire you :D"
-            onChange={(e) => setSubject(e.target.value)}
+            onChange={handleChange("subject")}
           />
           <FormField
             id="contactFormMessage"
             label="message"
+            value={data.message}
             placeholder="words of encouragement"
-            onChange={(e) => setMessage(e.target.value)}
+            errorText={errors.message}
+            onChange={handleChange("message")}
           />
         </div>
         <div className="pt-8">
-          <Button
-            type="submit"
-            onClick={(e: React.FormEvent<HTMLInputElement>) => handleSubmit(e)}
-            disabled={submitted}
-          >
+          <Button type="submit" onClick={handleSubmit} disabled={submitted}>
             {submitted ? "Sent" : "Send"}
           </Button>
         </div>

@@ -21,7 +21,7 @@ export default function handler(
   const mailData = {
     from: process.env.TESTMAIL,
     to: "shadhanm@gmail.com",
-    subject: req.body.subject,
+    subject: req.body.subject ?? "From Portfolio",
     text: req.body.message + " | Sent from: " + req.body.email,
     html: `<div>${req.body.message}</div><p>Sent from:
     ${req.body.email}</p>`,

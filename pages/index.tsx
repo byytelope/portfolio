@@ -56,7 +56,7 @@ export default function Home() {
     {
       component: (
         <div ref={projectsRef}>
-          <Projects />
+          <Projects inView={projectsInView} />
         </div>
       ),
       title: "stuff i've made",
