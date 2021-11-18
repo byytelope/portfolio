@@ -25,7 +25,9 @@ export default function ProjectInfo({
       />
       <div className="flex justify-between pt-8">
         <div>
-          <span className="block font-bold text-xl">{projectInfo.client}</span>
+          <span className="block font-bold text-xl tracking-wider">
+            {projectInfo.client}
+          </span>
           <span className="block font-mono text-greyBlue">
             {projectInfo.year}
           </span>
