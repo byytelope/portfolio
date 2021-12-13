@@ -41,7 +41,7 @@ export default function Header({
         animate={{ opacity: 1, y: 0, pointerEvents: "auto" }}
         transition={{ ease: "easeOut", delay: 2.6, duration: 1 }}
       >
-        I&apos;m a software engineer specialising in building frontends
+        I am a software engineer specialising in building frontends
         <br className="hidden lg:block" /> for both the{" "}
         <span className="font-mono text-aqua">{"<web/> && Mobile();"}</span>
       </motion.p>

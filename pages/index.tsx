@@ -1,18 +1,19 @@
 import { useCallback, useRef } from "react";
 import { useInView } from "react-intersection-observer";
+import { NextPage } from "next";
 import About from "../components/home/About";
 import Contact from "../components/home/Contact";
-import Employers from "../components/home/Employers";
+import Brands from "../components/home/Brands";
 import Footer from "../components/home/Footer";
 import Header from "../components/home/Header";
 import HomeSection from "../components/home/HomeSection";
 import Projects from "../components/home/Projects";
 import TechStack from "../components/home/TechStack";
 
-export default function Home() {
+const Home: NextPage = () => {
   const [aboutRef, aboutInView] = useInView({ triggerOnce: true });
   const [techStackRef, techStackInView] = useInView({ triggerOnce: true });
-  const [employersRef, employersInView] = useInView({ triggerOnce: true });
+  const [brandsRef, brandsInView] = useInView({ triggerOnce: true });
   const [projectsRef, projectsInView] = useInView({ triggerOnce: true });
   const [contactRef, contactInView] = useInView({ triggerOnce: true });
   const contactScrollRef = useRef<null | HTMLDivElement>(null);
@@ -46,12 +47,12 @@ export default function Home() {
     },
     {
       component: (
-        <div ref={employersRef}>
-          <Employers />
+        <div ref={brandsRef}>
+          <Brands />
         </div>
       ),
-      title: "where i've worked",
-      inView: employersInView,
+      title: "brands i have worked with",
+      inView: brandsInView,
     },
     {
       component: (
@@ -59,7 +60,7 @@ export default function Home() {
           <Projects inView={projectsInView} />
         </div>
       ),
-      title: "stuff i've made",
+      title: "stuff i have made",
       inView: projectsInView,
     },
     {
@@ -92,4 +93,6 @@ export default function Home() {
       <Footer />
     </main>
   );
-}
+};
+
+export default Home;

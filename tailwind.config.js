@@ -1,6 +1,5 @@
 module.exports = {
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-  darkMode: false, // or 'media' or 'class'
+  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       fontFamily: {
@@ -18,11 +17,6 @@ module.exports = {
       darkerBlue: "#1B222D",
       purple: "#AD82CB",
       red: "#E68282",
-    },
-  },
-  variants: {
-    extend: {
-      mixBlendMode: ["hover", "focus"],
     },
   },
   plugins: [require("@tailwindcss/forms")],
