@@ -73,43 +73,41 @@ export default function Contact() {
           shadhanm@gmail.com
         </a>
       </span>
-      <form className="pt-8">
-        <div className="flex flex-col lg:flex-row lg:space-x-4 space-y-4 lg:space-y-0">
+      <form className="pt-8 space-y-8">
+        <div className="flex flex-col lg:flex-row lg:space-x-8 space-y-8 lg:space-y-0">
           <FormField
             id="contactFormName"
             label="name"
+            name="name"
             value={data.name}
-            placeholder="your/company name"
             errorText={errors.name}
             onChange={handleChange("name")}
           />
           <FormField
             id="contactFormEmail"
             label="email"
+            name="email"
             value={data.email}
             type="email"
-            placeholder="your@email.com"
             errorText={errors.email}
             onChange={handleChange("email")}
           />
         </div>
-        <div className="py-4 space-y-4">
-          <FormField
-            id="contactFormSubject"
-            label="subject"
-            value={data.subject}
-            placeholder="looking to hire you :D"
-            onChange={handleChange("subject")}
-          />
-          <FormField
-            id="contactFormMessage"
-            label="message"
-            value={data.message}
-            placeholder="words of encouragement"
-            errorText={errors.message}
-            onChange={handleChange("message")}
-          />
-        </div>
+        <FormField
+          id="contactFormSubject"
+          label="subject"
+          name="subject"
+          value={data.subject}
+          onChange={handleChange("subject")}
+        />
+        <FormField
+          id="contactFormMessage"
+          label="message"
+          name="message"
+          value={data.message}
+          errorText={errors.message}
+          onChange={handleChange("message")}
+        />
         <div className="pt-8">
           <Button type="submit" onClick={handleSubmit} disabled={submitted}>
             {submitted ? "Sent" : "Send"}

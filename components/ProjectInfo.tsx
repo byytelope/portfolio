@@ -23,7 +23,7 @@ export default function ProjectInfo({
         className="rounded-lg"
         layout="responsive"
       />
-      <div className="flex justify-between pt-8">
+      <div className="flex flex-col lg:flex-row justify-between space-y-4 lg:space-y-0 pt-8 pb-2">
         <div>
           <span className="block font-bold text-xl tracking-wider">
             {projectInfo.client}
@@ -40,7 +40,7 @@ export default function ProjectInfo({
             href={projectInfo.link}
             target="_blank"
             rel="noreferrer"
-            className="text-2xl"
+            className="text-2xl rounded-full h-max w-max p-2 flex justify-center m-1 border-2 border-yellow hover:border-offWhite"
             aria-label={projectInfo.client}
           >
             <FiExternalLink />

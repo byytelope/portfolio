@@ -35,12 +35,12 @@ const contacts = contactsArray.map((contact, i) => {
 
 export default function Footer() {
   return (
-    <footer className="text-center py-16 flex flex-col">
+    <footer className="text-center py-16 flex flex-col items-center">
       <div className="space-x-8 text-2xl py-8 flex justify-center">
         {contacts}
       </div>
       <a
-        className="p-2 rounded-lg"
+        className="w-max"
         href="https://github.com/byytelope/portfolio"
         target="_blank"
         rel="noreferrer"
@@ -49,7 +49,7 @@ export default function Footer() {
         <span className="text-offWhite">View website code</span>
         {" </a>"}
       </a>
-      <span className="font-mono text-greyBlue text-sm">
+      <span className="font-mono text-greyBlue text-sm pt-2">
         Designed and built by Mohamed Shadhaan
       </span>
     </footer>

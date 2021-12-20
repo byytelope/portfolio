@@ -18,7 +18,7 @@ export default function About() {
         continue to believe that expanding my knowledge and learning different
         languages is key to becoming better at what I do.
       </p>
-      <div className="flex w-full lg:w-72 h-72 bg-darkblue mt-8 lg:mt-0" />
+      <div className="flex w-full lg:w-72 h-72 bg-darkblue mt-8 lg:mt-1" />
     </div>
   );
 }

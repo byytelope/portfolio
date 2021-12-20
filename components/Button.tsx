@@ -14,7 +14,7 @@ export default function Button({
   const enabledClass =
     "border-2 border-yellow hover:border-offWhite text-yellow hover:text-offWhite w-36 h-16 rounded-lg font-mono transition-colors duration-300 tracking-wider";
   const disabledClass =
-    "border-2 border-greyBlue text-greyBlue w-36 h-16 rounded-lg font-mono transition-colors duration-300 tracking-wider cursor-not-allowed";
+    "border-2 border-greyBlue text-greyBlue cursor-not-allowed w-36 h-16 rounded-lg font-mono transition-colors duration-300 tracking-wider";
 
   return (
     <button
