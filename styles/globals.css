@@ -4,7 +4,6 @@
 
 @layer base {
   html {
-    scroll-snap-type: y mandatory;
     @apply text-offWhite;
   }
 
