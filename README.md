@@ -1,10 +1,10 @@
-<center>
+<div align="center">
 
 # 🙋‍♂️<br/><br/>**My Personal Website** - V1
 
 Built with [Next.js](https://nextjs.org) and styled with [Tailwind CSS](https://tailwindcss.com)
 
-</center>
+</div>
 
 <br/>
 
