@@ -12,11 +12,11 @@ Built with [Next.js](https://nextjs.org) and styled with [Tailwind CSS](https://
 
 <!-- --- -->
 
-You are allowed to use the code in this project for your own **non-commercial** projects, but _please_ link to [Mohamed Shadhaan](https://shadhaan.vercel.app) in whatever you build with it.
+You are allowed to use the code in this project for your own projects, but **_please_** link to [Mohamed Shadhaan](https://shadhaan.vercel.app) in whatever you build with it.
 
 <br/>
 
-## **👍 Requirements**
+## **☑️ Requirements**
 
 <!-- --- -->
 

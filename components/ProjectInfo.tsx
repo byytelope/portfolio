@@ -40,7 +40,7 @@ export default function ProjectInfo({
             href={projectInfo.link}
             target="_blank"
             rel="noreferrer"
-            className="text-2xl rounded-full h-max w-max p-2 flex justify-center m-1 border-2 border-yellow hover:border-offWhite"
+            className="text-2xl rounded-full h-max w-max p-2 flex justify-center border-2 border-yellow hover:border-offWhite focus:ring-inset"
             aria-label={projectInfo.client}
           >
             <FiExternalLink />
