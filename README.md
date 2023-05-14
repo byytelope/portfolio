@@ -2,7 +2,7 @@
 
 # 🙋‍♂️<br/><br/>**My Personal Website** - V1
 
-Built with [Next.js](https://nextjs.org) and styled with [Tailwind CSS](https://tailwindcss.com)
+Built with [Next.js 12](https://nextjs.org) and styled with [Tailwind CSS](https://tailwindcss.com)
 
 </div>
 
