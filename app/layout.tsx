@@ -1,7 +1,8 @@
-import { Inter } from "next/font/google";
+import { Inconsolata } from "next/font/google";
+import Navbar from "./_components/Navbar";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const font = Inconsolata({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Mohamed Shadhaan",
@@ -15,7 +16,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`${font.className} bg-stone-100 dark:bg-stone-900 dark:text-stone-300 flex flex-col justify-center mx-auto w-full max-w-5xl`}
+      >
+        <header className="mt-40 pb-20">
+          <Navbar />
+        </header>
+        <main className="w-full">{children}</main>
+      </body>
     </html>
   );
 }
