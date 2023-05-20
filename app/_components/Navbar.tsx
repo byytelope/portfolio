@@ -6,7 +6,7 @@ import NavButton from "./NavButton";
 export default function Navbar() {
   const pathname = usePathname();
   const links = [
-    { name: "Home", href: "/" },
+    { name: "Me", href: "/" },
     { name: "Projects", href: "/projects" },
     { name: "Contact", href: "/contact" },
   ];

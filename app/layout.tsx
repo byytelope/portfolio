@@ -19,10 +19,12 @@ export default function RootLayout({
       <body
         className={`${font.className} bg-stone-100 dark:bg-stone-900 dark:text-stone-300 flex flex-col justify-center mx-auto w-full max-w-5xl`}
       >
-        <header className="mt-40 pb-20">
+        <header className="mt-24 pb-20">
           <Navbar />
         </header>
-        <main className="w-full">{children}</main>
+        <main className="flex w-full min-h-[calc(100vh-20rem)] items-center">
+          {children}
+        </main>
       </body>
     </html>
   );
