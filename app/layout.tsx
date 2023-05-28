@@ -1,5 +1,4 @@
 import { Inconsolata } from "next/font/google";
-import Navbar from "./_components/Navbar";
 import "./globals.css";
 
 const font = Inconsolata({ subsets: ["latin"] });
@@ -11,19 +10,22 @@ export const metadata = {
 
 export default function RootLayout({
   children,
+  projects,
+  work,
 }: {
   children: React.ReactNode;
+  projects: React.ReactNode;
+  work: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body
-        className={`${font.className} bg-stone-100 dark:bg-stone-900 dark:text-stone-300 flex flex-col justify-center mx-auto w-full max-w-5xl`}
+        className={`${font.className} bg-stone-100 text-stone-900 dark:bg-stone-900 dark:text-stone-300 flex flex-col justify-center mx-auto w-full max-w-5xl`}
       >
-        <header className="mt-24 pb-20">
-          <Navbar />
-        </header>
-        <main className="flex w-full min-h-[calc(100vh-20rem)] items-center">
+        <main className="flex flex-col w-full min-h-[calc(100vh-20rem)] mt-32 px-8 gap-16">
           {children}
+          {work}
+          {projects}
         </main>
       </body>
     </html>
