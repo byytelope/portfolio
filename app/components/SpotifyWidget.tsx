@@ -3,7 +3,7 @@ import { NowPlaying } from "../api/spotify/route";
 import { SpotifyLogo } from "./Icons";
 
 async function getData(): Promise<NowPlaying> {
-  const res = await fetch("http://localhost:3000/api/spotify", {
+  const res = await fetch(`${process.env.ROOT_URL}/api/spotify`, {
     cache: "no-store",
   });
 
