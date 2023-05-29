@@ -9,7 +9,6 @@ export default async function Home() {
         of Software Engineering with Honors. I have a profound passion for web
         dev and all things programming.
       </p>
-      {/* @ts-expect-error Async Server Component */}
       <SpotifyWidget />
     </section>
   );
