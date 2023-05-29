@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import querystring from "querystring";
 
 async function getToken() {
@@ -36,7 +36,7 @@ export interface NowPlaying {
   isPlaying: boolean;
 }
 
-export async function GET() {
+export async function GET(request: NextRequest) {
   const { access_token } = await getToken();
   const res = await fetch(
     "https://api.spotify.com/v1/me/player/currently-playing",
