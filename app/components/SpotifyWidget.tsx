@@ -1,21 +1,20 @@
+"use client";
+
 import Image from "next/image";
+import useSWR from "swr";
 import { NowPlaying } from "../api/spotify/route";
 import { SpotifyLogo } from "./Icons";
 
-async function getData(): Promise<NowPlaying> {
-  const res = await fetch(`${process.env.ROOT_URL}/api/spotify`, {
-    cache: "no-store",
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch now playing data");
-  }
-
+async function fetcher<JSON = any>(
+  input: RequestInfo,
+  init?: RequestInit
+): Promise<JSON> {
+  const res = await fetch(input, init);
   return res.json();
 }
 
-export default async function SpotifyWidget() {
-  const data = await getData();
+export default function SpotifyWidget() {
+  const { data } = useSWR<NowPlaying>("/api/spotify", fetcher);
 
   return (
     <div className="flex relative items-start gap-4 w-full mt-12 p-2 bg-stone-200 dark:bg-stone-800 rounded-md overflow-hidden">
