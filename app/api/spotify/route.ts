@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import querystring from "querystring";
 
 async function getToken() {
@@ -14,6 +14,7 @@ async function getToken() {
       grant_type: "refresh_token",
       refresh_token: process.env.SPOTIFY_REFTOKEN,
     }),
+    cache: "no-store",
   });
 
   const bruh: Promise<{
@@ -44,6 +45,7 @@ export async function GET() {
       headers: {
         Authorization: `Bearer ${access_token}`,
       },
+      cache: "no-store",
     }
   );
 

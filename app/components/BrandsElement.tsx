@@ -17,7 +17,7 @@ export default function BrandsElement({
             className="rounded bg-amber-300 dark:bg-amber-500 shadow-md shadow-amber-300/50 dark:shadow-amber-700/20"
           />
         </div>
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col w-full md:w-fit">
           <span>{brandData.name}</span>
           <span className="text-stone-500">{brandData.description}</span>
         </div>

@@ -17,7 +17,7 @@ export default function SpotifyWidget() {
   const { data } = useSWR<NowPlaying>("/api/spotify", fetcher);
 
   return (
-    <div className="flex relative items-start gap-4 w-full mt-12 p-2 bg-stone-200 dark:bg-stone-800 rounded-md overflow-hidden">
+    <div className="flex relative items-start gap-4 w-full p-2 bg-stone-200 dark:bg-stone-800 rounded-md overflow-hidden">
       {!data || !data.isPlaying ? (
         <>
           <div className="w-12 h-12 rounded bg-stone-100 dark:bg-stone-900" />
