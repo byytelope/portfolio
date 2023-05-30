@@ -11,20 +11,20 @@ export const metadata = {
 export default function RootLayout({
   children,
   projects,
-  work,
+  brands,
 }: {
   children: React.ReactNode;
   projects: React.ReactNode;
-  work: React.ReactNode;
+  brands: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body
         className={`${font.className} bg-stone-100 text-stone-900 dark:bg-stone-900 dark:text-stone-300 flex flex-col justify-center mx-auto w-full max-w-5xl`}
       >
-        <main className="flex flex-col w-full min-h-[calc(100vh-20rem)] mt-32 px-8 gap-16">
+        <main className="flex flex-col w-full min-h-[calc(100vh-20rem)] mt-24 md:mt-32 px-8 gap-16">
           {children}
-          {work}
+          {brands}
           {projects}
         </main>
       </body>

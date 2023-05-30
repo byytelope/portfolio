@@ -37,8 +37,8 @@ export default function SpotifyWidget() {
             <Image
               src={data.artUrl ?? ""}
               alt="Album artwork"
-              className="rounded"
               fill
+              className="rounded shadow-md shadow-stone-500/20 dark:shadow-stone-900/20"
             />
           </a>
           <div className="flex flex-col sm:items-center mr-auto sm:mx-auto">
@@ -64,7 +64,7 @@ export default function SpotifyWidget() {
               ))}
             </span>
           </div>
-          <div className="absolute inset-0 scale-[300%] blur saturate-200 opacity-20 pointer-events-none">
+          <div className="absolute inset-0 scale-[300%] blur-lg saturate-200 opacity-20 pointer-events-none">
             <Image src={data.artUrl ?? ""} alt="Album artwork blurred" fill />
           </div>
         </>
@@ -73,7 +73,7 @@ export default function SpotifyWidget() {
         href="https://open.spotify.com/user/shadhanmshadow"
         target="_blank"
         rel="noreferrer"
-        className="w-8 hover:-translate-y-1 transition duration-300"
+        className="w-8 hover:-translate-y-1 transition duration-300 flex flex-shrink-0"
       >
         <SpotifyLogo />
       </a>

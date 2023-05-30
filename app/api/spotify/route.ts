@@ -36,7 +36,7 @@ export interface NowPlaying {
   isPlaying: boolean;
 }
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   const { access_token } = await getToken();
   const res = await fetch(
     "https://api.spotify.com/v1/me/player/currently-playing",
@@ -58,19 +58,28 @@ export async function GET(request: NextRequest) {
       is_playing,
     } = data;
 
-    return NextResponse.json({
-      name,
-      songUrl: external_urls.spotify,
-      artUrl: album.images[0].url,
-      albumUrl: album.external_urls.spotify,
-      artists: artists.map(
-        (artist: { external_urls: { spotify: string }; name: string }) => ({
-          name: artist.name,
-          url: artist.external_urls.spotify,
-        })
-      ),
-      isPlaying: is_playing,
-    });
+    return NextResponse.json(
+      {
+        name,
+        songUrl: external_urls.spotify,
+        artUrl: album.images[0].url,
+        albumUrl: album.external_urls.spotify,
+        artists: artists.map(
+          (artist: { external_urls: { spotify: string }; name: string }) => ({
+            name: artist.name,
+            url: artist.external_urls.spotify,
+          })
+        ),
+        isPlaying: is_playing,
+      },
+      {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+          "Access-Control-Allow-Headers": "Content-Type, Authorization",
+        },
+      }
+    );
   } else if (res.status === 204) {
     return NextResponse.json({
       name: "",
