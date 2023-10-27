@@ -1,10 +1,9 @@
 import IconLink from "./components/IconLink";
 import { EmailLogo, GitHubLogo, InstagramLogo } from "./components/Icons";
-import SpotifyWidget from "./components/SpotifyWidget";
 
 export default async function Home() {
   return (
-    <section className="flex flex-col justify-center gap-8">
+    <section className="flex flex-col justify-center gap-8 ">
       <div className="flex flex-col gap-6">
         <div className="flex items-center gap-6">
           <IconLink
@@ -24,7 +23,6 @@ export default async function Home() {
         of Software Engineering with Honors. I have a profound passion for web
         dev and all things programming.
       </p>
-      <SpotifyWidget />
     </section>
   );
 }
