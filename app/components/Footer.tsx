@@ -11,7 +11,7 @@ export default function Footer() {
         />
         <IconLink href="https://github.com/byytelope" icon={<GitHubLogo />} />
         <IconLink
-          href="mailto:shadhanm@gmail.com?subject=Hello%20I%20want%20to%20hire%20you"
+          href="mailto:hello@shadhaan.me?subject=Hello%20I%20want%20to%20hire%20you"
           icon={<EmailLogo />}
         />
       </div>
