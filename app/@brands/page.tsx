@@ -32,6 +32,7 @@ export default function Brands() {
       description: "Lead Dev for Website",
       url: "https://curatedsalad.vercel.app",
       startYear: "2021",
+      endYear: "2022",
       logoUrl: "",
     },
   ];
