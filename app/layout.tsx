@@ -1,4 +1,5 @@
 import { Inconsolata } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import Footer from "@/app/components/Footer";
 import "@/app/globals.css";
 
@@ -21,6 +22,7 @@ export default function RootLayout({
       >
         <main className="flex flex-col w-full min-h-[calc(85dvh-6rem)] mt-24 md:mt-32 gap-16">
           {children}
+          <Analytics />
         </main>
         <Footer />
       </body>
