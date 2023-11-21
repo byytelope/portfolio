@@ -1,4 +1,4 @@
-import { BrandsData } from "../@brands/page";
+import { BrandsData } from "@/utils/brandsData";
 
 export default function BrandsElement({
   brandData,

@@ -1,6 +1,6 @@
 import { Inconsolata } from "next/font/google";
-import "@/globals.css";
-import Footer from "@/components/Footer";
+import Footer from "@/app/components/Footer";
+import "@/app/globals.css";
 
 const font = Inconsolata({ subsets: ["latin"] });
 
@@ -11,12 +11,8 @@ export const metadata = {
 
 export default function RootLayout({
   children,
-  // projects,
-  brands,
 }: {
   children: React.ReactNode;
-  projects: React.ReactNode;
-  brands: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -25,8 +21,6 @@ export default function RootLayout({
       >
         <main className="flex flex-col w-full min-h-[calc(85dvh-6rem)] mt-24 md:mt-32 gap-16">
           {children}
-          {brands}
-          {/*projects*/}
         </main>
         <Footer />
       </body>
