@@ -8,11 +8,17 @@ export default function Footer() {
         <IconLink
           href="https://instagram.com/mohamed_shadhaan"
           icon={<InstagramLogo />}
+          label="Instagram link"
         />
-        <IconLink href="https://github.com/byytelope" icon={<GitHubLogo />} />
+        <IconLink
+          href="https://github.com/byytelope"
+          icon={<GitHubLogo />}
+          label="GitHub link"
+        />
         <IconLink
           href="mailto:hello@shadhaan.me?subject=Hello%20I%20want%20to%20hire%20you"
           icon={<EmailLogo />}
+          label="Email link"
         />
       </div>
     </footer>
