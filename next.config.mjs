@@ -3,9 +3,9 @@ const nextConfig = {
   images: {
     remotePatterns: [{ protocol: "https", hostname: "i.scdn.co" }],
   },
-  experimental: {
-    ppr: true,
-  },
+  // experimental: {
+  //   ppr: true,
+  // },
 };
 
 export default nextConfig;
