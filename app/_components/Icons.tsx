@@ -1,4 +1,4 @@
-export function SpotifyLogo() {
+export function SpotifyIcon() {
   return (
     <svg
       fill="currentColor"
@@ -14,7 +14,7 @@ export function SpotifyLogo() {
   );
 }
 
-export function InstagramLogo() {
+export function InstagramIcon() {
   return (
     <svg
       width="100%"
@@ -34,7 +34,7 @@ export function InstagramLogo() {
   );
 }
 
-export function GitHubLogo() {
+export function GitHubIcon() {
   return (
     <svg
       width="100%"
@@ -54,7 +54,7 @@ export function GitHubLogo() {
   );
 }
 
-export function EmailLogo() {
+export function EmailIcon() {
   return (
     <svg
       width="100%"

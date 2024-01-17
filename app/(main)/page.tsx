@@ -1,10 +1,11 @@
-import BrandsElement from "@/app/_components/BrandsElement";
-import { BrandsData } from "@/app/_lib/db";
 import { sql } from "@vercel/postgres";
 
+import ListItem from "@/app/_components/ListItem";
+import { ExperienceData } from "@/app/_lib/types";
+
 export default async function Home() {
-  const { rows: brandsData }: { rows: BrandsData[] } =
-    await sql`SELECT * FROM BrandData`;
+  const { rows: experienceData }: { rows: ExperienceData[] } =
+    await sql`SELECT * FROM experience_data`;
 
   return (
     <>
@@ -20,10 +21,22 @@ export default async function Home() {
       </section>
 
       <section className="flex flex-col justify-center gap-4">
-        <h2 className="text-stone-400 dark:text-stone-600 text-md">/brands</h2>
-        <div className="flex flex-col divide-y divide-stone-200 dark:divide-stone-800">
-          {brandsData.map((brand) => (
-            <BrandsElement key={brand.url + brand.name} brandData={brand} />
+        <h2 className="text-stone-400 dark:text-stone-600 text-md">
+          /experience:GET
+        </h2>
+        <div className="flex flex-col gap-2">
+          {experienceData.map((brand) => (
+            <ListItem
+              key={brand.url + brand.name}
+              title={brand.name}
+              description={brand.description}
+              href={brand.url}
+              trailing={
+                <span className="font-light text-right whitespace-pre-line">
+                  {brand.startyear} &mdash;&nbsp;{brand.endyear ?? "Present"}
+                </span>
+              }
+            />
           ))}
         </div>
       </section>

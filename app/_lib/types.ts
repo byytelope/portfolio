@@ -1,4 +1,4 @@
-export interface BrandsData {
+export interface ExperienceData {
   name: string;
   description: string;
   url: string;

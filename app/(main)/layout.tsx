@@ -12,7 +12,7 @@ export default function HomeLayout({
 }) {
   return (
     <>
-      <main className="flex flex-col w-full min-h-[calc(85dvh-6rem)] mt-24 md:mt-32 gap-16">
+      <main className="flex flex-col w-full min-h-[calc(85dvh-6rem)] mt-16 md:mt-24 xl:mt-32 gap-16">
         {children}
       </main>
       <Footer />

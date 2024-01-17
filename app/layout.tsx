@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${font.className} bg-stone-100 text-stone-500 dark:bg-stone-900 flex flex-col justify-center mx-auto w-full max-w-5xl px-8`}
+        className={`${font.className} bg-stone-50 text-stone-500 dark:bg-stone-900 flex flex-col justify-center mx-auto w-full max-w-5xl px-8 relative`}
       >
         {children}
         <Analytics />
