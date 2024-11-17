@@ -1,13 +1,16 @@
 import { Inconsolata } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import "@/app/app.css";
 
-const font = Inconsolata({ subsets: ["latin"] });
+import "./globals.css";
+
+const font = Inconsolata({
+  subsets: ["latin"],
+});
 
 export const metadata = {
   title: "Mohamed Shadhaan",
-  description: "BSE Student / Web dev / Rust",
+  description: "BSE Student / Developer",
 };
 
 export default function RootLayout({
