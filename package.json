@@ -11,8 +11,7 @@
   "dependencies": {
     "@vercel/analytics": "latest",
     "@vercel/postgres": "latest",
-    "@vercel/speed-insights": "^1.1.0",
-    "framer-motion": "^11.11.17",
+    "@vercel/speed-insights": "latest",
     "next": "^15",
     "react": "canary",
     "react-dom": "canary",
@@ -23,7 +22,7 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "eslint": "^9.15.0",
+    "eslint": "^9",
     "eslint-config-next": "^15",
     "tailwindcss": "next",
     "typescript": "latest"
