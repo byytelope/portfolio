@@ -15,7 +15,7 @@ export default function ListItem({
       <a
         href={href}
         target="_blank"
-        className="flex gap-4 py-2 px-3 hover:bg-stone-200/50 dark:hover:bg-stone-800/50 transition duration-300 rounded-md"
+        className="flex gap-4 py-2 px-3 hover:bg-stone-200/50 dark:hover:bg-stone-800/50 transition ease-out duration-300 rounded-md"
       >
         <div className="flex flex-col w-full md:w-fit">
           <span>{title}</span>

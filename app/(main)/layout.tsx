@@ -2,7 +2,7 @@ import Footer from "@/app/_components/Footer";
 
 export const metadata = {
   title: "Mohamed Shadhaan",
-  description: "BSE Student / Web dev / Rust",
+  description: "BSE Student / Developer",
 };
 
 export default function HomeLayout({
@@ -12,7 +12,7 @@ export default function HomeLayout({
 }) {
   return (
     <>
-      <main className="flex flex-col w-full min-h-[calc(85dvh-6rem)] mt-16 md:mt-24 xl:mt-32 gap-16">
+      <main className="flex flex-col w-full min-h-[calc(85dvh-6rem)] py-16 md:py-24 xl:py-32 gap-8">
         {children}
       </main>
       <Footer />
