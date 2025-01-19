@@ -1,12 +1,10 @@
-import { sql } from "@vercel/postgres";
 import Link from "next/link";
 
-import ListItem from "@/app/_components/ListItem";
-import { ExperienceData } from "@/app/_lib/types";
+import ListItem from "@/components/ListItem";
+import { fetchExperienceData } from "@/lib/actions";
 
 export default async function Home() {
-  const { rows: experienceData }: { rows: ExperienceData[] } =
-    await sql`SELECT * FROM experience_data`;
+  const experienceData = await fetchExperienceData();
 
   return (
     <>
@@ -20,7 +18,7 @@ export default async function Home() {
             className="underline"
             href="https://university.taylors.edu.my/"
             target="_blank"
-            rel="external"
+            rel="noreferrer"
           >
             Taylor&apos;s University
           </a>

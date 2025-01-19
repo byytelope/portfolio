@@ -10,10 +10,10 @@
   },
   "dependencies": {
     "@vercel/analytics": "latest",
-    "@vercel/blob": "^0.27.0",
+    "@vercel/blob": "latest",
     "@vercel/postgres": "latest",
     "@vercel/speed-insights": "latest",
-    "next": "latest",
+    "next": "canary",
     "react": "latest",
     "react-dom": "latest"
   },
@@ -22,8 +22,7 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "eslint": "latest",
-    "eslint-config-next": "latest",
+    "eslint-config-next": "canary",
     "tailwindcss": "next",
     "typescript": "latest"
   },

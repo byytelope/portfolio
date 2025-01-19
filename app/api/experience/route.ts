@@ -1,10 +1,7 @@
-import { sql } from "@vercel/postgres";
-
-import { ExperienceData } from "@/app/_lib/types";
+import { fetchExperienceData } from "@/lib/actions";
 
 export async function GET() {
-  const { rows: experienceData }: { rows: ExperienceData[] } =
-    await sql`SELECT * FROM experience_data`;
+  const experienceData = await fetchExperienceData();
 
   return Response.json({ experienceData });
 }
