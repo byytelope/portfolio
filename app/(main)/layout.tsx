@@ -1,10 +1,5 @@
 import Footer from "@/components/Footer";
 
-export const metadata = {
-  title: "Mohamed Shadhaan",
-  description: "BSE Student / Developer",
-};
-
 export default function HomeLayout({
   children,
 }: {

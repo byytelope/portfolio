@@ -1,24 +1,21 @@
-import Link from "next/link";
-
+import LinkButton from "@/components/LinkButton";
 import ListItem from "@/components/ListItem";
-import { fetchExperienceData } from "@/lib/actions";
+import { fetchCvLink, fetchExperienceData } from "@/lib/actions";
 
 export default async function Home() {
   const experienceData = await fetchExperienceData();
+  const cvLink = await fetchCvLink();
 
   return (
     <>
       <section className="flex flex-col justify-center gap-8 mb-8">
-        <h1 className="tracking-wider font-medium text-xl text-stone-600 dark:text-stone-400">
-          Mohamed Shadhaan
-        </h1>
+        <h1 className="tracking-wider font-medium text-xl">Mohamed Shadhaan</h1>
         <p>
           I&apos;m a <i>Maldivian</i> student at&nbsp;
           <a
-            className="underline"
             href="https://university.taylors.edu.my/"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             Taylor&apos;s University
           </a>
@@ -28,22 +25,10 @@ export default async function Home() {
       </section>
 
       <section className="flex flex-col justify-center gap-4">
-        <h2 className="flex w-full justify-between">
+        <LinkButton href={cvLink.url} title="CV" />
+        <h2 className="flex items-center">
+          <LinkButton title="GET" href="/api/experience" />
           <span className="text-stone-400 dark:text-stone-600 text-md">
-            <Link className="underline" href="/api/cv">
-              GET
-            </Link>
-            &nbsp;/api/cv
-          </span>
-        </h2>
-      </section>
-
-      <section className="flex flex-col justify-center gap-4">
-        <h2 className="flex w-full justify-between">
-          <span className="text-stone-400 dark:text-stone-600 text-md">
-            <Link className="underline" href="/api/experience">
-              GET
-            </Link>
             &nbsp;/api/experience
           </span>
         </h2>

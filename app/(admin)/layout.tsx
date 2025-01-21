@@ -1,8 +1,3 @@
-export const metadata = {
-  title: "Mohamed Shadhaan",
-  description: "BSE Student / Developer",
-};
-
 export default function AdminLayout({
   children,
 }: {

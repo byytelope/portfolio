@@ -1,5 +1,5 @@
 import IconLink from "@/components/IconLink";
-import { EmailIcon, GitHubIcon, InstagramIcon } from "./Icons";
+import { EmailIcon, GitHubIcon, InstagramIcon } from "@/components/Icons";
 
 export default function Footer() {
   return (

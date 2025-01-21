@@ -14,10 +14,13 @@ export const fetchExperienceData = async () => {
   return experienceData;
 };
 
-export const fetchCvUrl = async () => {
-  cacheTag("CV");
+export const fetchCvLink = async () => {
+  cacheTag("cvLink");
+  console.log("Fetching CV...");
   const { blobs } = await list();
-  const cv = blobs.find((blob) => blob.pathname.endsWith("cv.pdf"));
+  const cvBlob = blobs.find((blob) => blob.pathname.endsWith("cv.pdf"));
 
-  return cv ? cv.downloadUrl : "";
+  if (!cvBlob) return { status: 404, url: "" };
+
+  return { status: 200, url: cvBlob.url };
 };
