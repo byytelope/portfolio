@@ -12,26 +12,21 @@ export default async function Home() {
         <h1 className="tracking-wider font-medium text-xl">Mohamed Shadhaan</h1>
         <p>
           I&apos;m a <i>Maldivian</i> student at&nbsp;
-          <a
+          <LinkButton
             href="https://university.taylors.edu.my/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Taylor&apos;s University
-          </a>
+            title="Taylor's University"
+            variant="underlined"
+          />
           , completing my Bachelor of Software Engineering with Honors. I have a
           profound passion for all things programming.
         </p>
       </section>
 
       <section className="flex flex-col justify-center gap-4">
-        <LinkButton href={cvLink.url} title="CV" />
-        <h2 className="flex items-center">
-          <LinkButton title="GET" href="/api/experience" />
-          <span className="text-stone-400 dark:text-stone-600 text-md">
-            &nbsp;/api/experience
-          </span>
-        </h2>
+        <div className="flex gap-2">
+          <LinkButton href={cvLink.url} title="CV" />
+          <LinkButton title="Experience" href="/api/experience" />
+        </div>
         <div className="flex flex-col gap-2">
           {experienceData.map((brand) => (
             <ListItem
