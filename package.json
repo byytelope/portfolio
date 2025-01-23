@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "2.3.0",
+  "version": "2.5.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -20,12 +20,12 @@
     "tailwind-merge": "latest"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "next",
+    "@tailwindcss/postcss": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "eslint-config-next": "canary",
-    "tailwindcss": "next",
+    "tailwindcss": "latest",
     "typescript": "latest"
   },
   "trustedDependencies": ["@vercel/speed-insights"]
