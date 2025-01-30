@@ -11,9 +11,7 @@ export default async function Home() {
     <>
       <main className="flex flex-col w-full min-h-[calc(85dvh-6rem)] py-16 md:py-24 xl:py-32 gap-8">
         <section className="flex flex-col justify-center gap-8 mb-8">
-          <h1 className="tracking-wider font-medium text-xl">
-            Mohamed Shadhaan
-          </h1>
+          <h1 className="tracking-wider text-lg">Mohamed Shadhaan</h1>
           <p>
             I&apos;m a <i>Maldivian</i> student at&nbsp;
             <LinkButton
