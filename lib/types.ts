@@ -3,8 +3,8 @@ export interface ExperienceData {
   name: string;
   description: string;
   url: string;
-  startyear: string;
-  endyear?: string;
+  start_year: number;
+  end_year?: number;
 }
 
 export const CacheTags = {

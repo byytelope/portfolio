@@ -23,7 +23,6 @@ export default async function Home() {
             a profound passion for all things programming.
           </p>
         </section>
-
         <section className="flex flex-col justify-center gap-4">
           <div className="flex gap-2">
             <LinkButton href={cvLink.url} title="CV" />
@@ -38,8 +37,8 @@ export default async function Home() {
                 href={experience.url}
                 trailing={
                   <span className="font-light text-right whitespace-pre-line">
-                    {experience.startyear} &mdash;&nbsp;
-                    {experience.endyear ?? "Present"}
+                    {experience.start_year} &mdash;&nbsp;
+                    {experience.end_year ?? "Present"}
                   </span>
                 }
               />

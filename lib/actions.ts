@@ -1,21 +1,23 @@
-"use cache";
+"use server";
 
+import { neon } from "@neondatabase/serverless";
 import { list } from "@vercel/blob";
-import { sql } from "@vercel/postgres";
 import { unstable_cacheTag as cacheTag } from "next/cache";
 
 import { CacheTags, type ExperienceData } from "./types";
 
 export const fetchExperienceData = async () => {
+  "use cache";
+  const sql = neon(process.env.DATABASE_URL!);
   cacheTag(CacheTags.experienceData);
   console.log("Fetching experience data...");
-  const { rows: experienceData }: { rows: ExperienceData[] } =
-    await sql`SELECT * FROM experience_data`;
+  const rows = (await sql`SELECT * FROM experience_data`) as ExperienceData[];
 
-  return experienceData;
+  return rows;
 };
 
 export const fetchCvLink = async () => {
+  "use cache";
   cacheTag(CacheTags.cvLink);
   console.log("Fetching CV...");
   const { blobs } = await list();

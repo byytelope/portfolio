@@ -1,4 +1,4 @@
-import { revalidateTag } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 
 import { CacheTags, type CacheTag } from "@/lib/types";
 
@@ -24,6 +24,7 @@ export async function POST(req: Request) {
       );
     }
     revalidateTag(tag);
+    revalidatePath("/");
 
     return Response.json(
       { msg: `Successfully revalidated \`${tag}\`.` },

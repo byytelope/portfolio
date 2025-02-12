@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^0.10.4",
     "@vercel/analytics": "latest",
     "@vercel/blob": "latest",
-    "@vercel/postgres": "latest",
     "@vercel/speed-insights": "latest",
     "cva": "beta",
     "next": "canary",
