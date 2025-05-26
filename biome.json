@@ -1,0 +1,18 @@
+{
+  "$schema": "https://next.biomejs.dev/schemas/2.0.0-beta/schema.json",
+  "formatter": {
+    "indentStyle": "space"
+  },
+  "linter": {
+    "domains": {
+      "react": "all",
+      "next": "all",
+      "project": "recommended"
+    },
+    "rules": {
+      "style": {
+        "useImportType": "warn"
+      }
+    }
+  }
+}

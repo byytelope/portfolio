@@ -1,10 +1,15 @@
 import Footer from "@/components/Footer";
 import LinkButton from "@/components/LinkButton";
 import ListItem from "@/components/ListItem";
-import { fetchCvLink, fetchExperienceData } from "@/lib/actions";
+import {
+  fetchCvLink,
+  fetchExperienceData,
+  fetchProjectsData,
+} from "@/lib/actions";
 
 export default async function Home() {
   const experienceData = await fetchExperienceData();
+  const projectsData = await fetchProjectsData();
   const cvLink = await fetchCvLink();
 
   return (
@@ -41,6 +46,21 @@ export default async function Home() {
                     {experience.end_year ?? "Present"}
                   </span>
                 }
+              />
+            ))}
+          </div>
+        </section>
+        <section className="flex flex-col justify-center gap-4">
+          <div className="flex gap-2">
+            <LinkButton title="Projects" href="/api/projects" />
+          </div>
+          <div className="flex flex-col gap-2">
+            {projectsData.map((project) => (
+              <ListItem
+                key={project.id}
+                title={project.name}
+                description={project.description}
+                href={project.url}
               />
             ))}
           </div>

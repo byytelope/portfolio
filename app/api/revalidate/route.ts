@@ -1,6 +1,6 @@
 import { revalidatePath, revalidateTag } from "next/cache";
 
-import { CacheTags, type CacheTag } from "@/lib/types";
+import { type CacheTag, CacheTags } from "@/lib/types";
 
 interface ReqBody {
   tag: CacheTag;

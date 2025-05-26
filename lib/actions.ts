@@ -4,7 +4,12 @@ import { neon } from "@neondatabase/serverless";
 import { list } from "@vercel/blob";
 import { unstable_cacheTag as cacheTag, revalidateTag } from "next/cache";
 
-import { type CacheTag, CacheTags, type ExperienceData } from "./types";
+import {
+  type CacheTag,
+  CacheTags,
+  type ExperienceData,
+  type ProjectsData,
+} from "./types";
 
 export const revalidateExperienceData = async (
   _: { msg: string; status: number },
@@ -24,11 +29,23 @@ export const revalidateExperienceData = async (
 
 export const fetchExperienceData = async () => {
   "use cache";
-  const sql = neon(process.env.DATABASE_URL!);
+  const sql = neon(process.env.DATABASE_URL ?? "");
   cacheTag(CacheTags.experienceData);
   console.log("Fetching experience data...");
+
   const rows =
     (await sql`SELECT * FROM experience_data ORDER BY start_year ASC, end_year ASC;`) as ExperienceData[];
+
+  return rows;
+};
+
+export const fetchProjectsData = async () => {
+  "use cache";
+  const sql = neon(process.env.DATABASE_URL ?? "");
+  cacheTag(CacheTags.projectsData);
+  console.log("Fetching projects data...");
+
+  const rows = (await sql`SELECT * FROM projects;`) as ProjectsData[];
 
   return rows;
 };

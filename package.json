@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -29,5 +29,7 @@
     "tailwindcss": "latest",
     "typescript": "latest"
   },
-  "trustedDependencies": ["@vercel/speed-insights"]
+  "trustedDependencies": [
+    "@vercel/speed-insights"
+  ]
 }

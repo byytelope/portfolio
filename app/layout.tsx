@@ -1,5 +1,6 @@
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Metadata } from "next";
 import { Inconsolata } from "next/font/google";
 import { Toaster } from "sonner";
 
@@ -9,7 +10,7 @@ const font = Inconsolata({
   subsets: ["latin"],
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Mohamed Shadhaan",
   description: "BSE Student / Developer",
 };
