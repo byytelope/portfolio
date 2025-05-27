@@ -33,8 +33,7 @@ export const fetchExperienceData = async () => {
   cacheTag(CacheTags.experienceData);
   console.log("Fetching experience data...");
 
-  const rows =
-    (await sql`SELECT * FROM experience_data ORDER BY start_year ASC, end_year ASC;`) as ExperienceData[];
+  const rows = (await sql`SELECT * FROM experience_data;`) as ExperienceData[];
 
   return rows;
 };
