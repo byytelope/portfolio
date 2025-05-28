@@ -11,6 +11,7 @@ export interface ProjectsData {
   id: string;
   name: string;
   description: string;
+  slug: string;
   url?: string;
 }
 
