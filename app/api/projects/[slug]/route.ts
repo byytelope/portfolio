@@ -1,6 +1,10 @@
 import { neon } from "@neondatabase/serverless";
+import type { NextRequest } from "next/server";
 
-export async function GET({ params }: { params: Promise<{ slug: string }> }) {
+export async function GET(
+  _request: NextRequest,
+  { params }: { params: Promise<{ slug: string }> },
+) {
   const { slug } = await params;
 
   const sql = neon(process.env.DATABASE_URL ?? "");

@@ -25,6 +25,7 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "eslint": "^9.27.0",
     "eslint-config-next": "canary",
     "tailwindcss": "latest",
     "typescript": "latest"
