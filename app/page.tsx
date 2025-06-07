@@ -34,22 +34,20 @@ export default async function Home() {
             <LinkButton title="Experience" href="/api/experience" />
           </div>
           <div className="flex flex-col gap-2">
-            {experienceData
-              .sort((a, b) => a.start_year - b.start_year)
-              .map((experience) => (
-                <ListItem
-                  key={experience.id}
-                  title={experience.name}
-                  description={experience.description}
-                  href={experience.url}
-                  trailing={
-                    <span className="font-light text-right whitespace-pre-line">
-                      {experience.start_year} &mdash;&nbsp;
-                      {experience.end_year ?? "Present"}
-                    </span>
-                  }
-                />
-              ))}
+            {experienceData.map((experience) => (
+              <ListItem
+                key={experience.id}
+                title={experience.name}
+                description={experience.description}
+                href={experience.url}
+                trailing={
+                  <span className="font-light text-right whitespace-pre-line">
+                    {experience.start_year} &mdash;&nbsp;
+                    {experience.end_year ?? "Present"}
+                  </span>
+                }
+              />
+            ))}
           </div>
         </section>
         <section className="flex flex-col justify-center gap-4">

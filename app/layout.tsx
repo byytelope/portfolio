@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { Inconsolata } from "next/font/google";
 import { Toaster } from "sonner";
 
-import "../globals.css";
+import "@/app/globals.css";
 
 const font = Inconsolata({
   subsets: ["latin"],
@@ -26,7 +26,7 @@ export default function RootLayout({
         className={`${font.className} bg-stone-50 text-stone-500 dark:bg-stone-900 flex flex-col justify-center mx-auto w-full max-w-5xl px-8 relative`}
       >
         {children}
-        <Toaster theme="system" richColors />
+        <Toaster theme="system" />
         <Analytics />
         <SpeedInsights />
       </body>

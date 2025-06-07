@@ -3,7 +3,7 @@ import type { VariantProps } from "cva";
 import { cva } from "@/cva.config";
 
 const button = cva({
-  base: "flex gap-1 w-fit rounded-md transition-colors duration-300 ease-out",
+  base: "flex gap-1 w-fit rounded-md transition-colors duration-300 ease-out disabled:pointer-events-none disabled:opacity-50",
   variants: {
     variant: {
       filled:

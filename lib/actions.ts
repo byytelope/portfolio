@@ -4,14 +4,9 @@ import { neon } from "@neondatabase/serverless";
 import { list } from "@vercel/blob";
 import { unstable_cacheTag as cacheTag, revalidateTag } from "next/cache";
 
-import {
-  type CacheTag,
-  CacheTags,
-  type ExperienceData,
-  type ProjectsData,
-} from "./types";
+import { CacheTags, type ExperienceData, type ProjectsData } from "./types";
 
-export const revalidateExperienceData = async (
+export const revalidateData = async (
   _: { msg: string; status: number },
   formData: FormData,
 ) => {
@@ -21,10 +16,10 @@ export const revalidateExperienceData = async (
     return { msg: "Invalid secret key.", status: 403 };
   }
 
-  const tag: CacheTag = "experience-data";
-  revalidateTag(tag);
+  revalidateTag(CacheTags.experienceData);
+  revalidateTag(CacheTags.projectsData);
 
-  return { msg: `Successfully revalidated \`${tag}\`.`, status: 200 };
+  return { msg: "Successfully revalidated data", status: 200 };
 };
 
 export const fetchExperienceData = async () => {
@@ -33,7 +28,8 @@ export const fetchExperienceData = async () => {
   cacheTag(CacheTags.experienceData);
   console.log("Fetching experience data...");
 
-  const rows = (await sql`SELECT * FROM experience_data;`) as ExperienceData[];
+  const rows =
+    (await sql`SELECT * FROM experience_data ORDER BY start_year DESC, end_year DESC;`) as ExperienceData[];
 
   return rows;
 };

@@ -1,7 +1,10 @@
-import { fetchProjectsData } from "@/lib/actions";
+export const dynamic = "force-static";
+
+import { neon } from "@neondatabase/serverless";
 
 export async function GET() {
-  const projectsData = await fetchProjectsData();
+  const sql = neon(process.env.DATABASE_URL ?? "");
+  const data = await sql`SELECT * FROM projects;`;
 
-  return Response.json({ projectsData });
+  return Response.json({ data });
 }

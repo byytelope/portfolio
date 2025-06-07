@@ -1,14 +1,15 @@
 "use client";
 
-import { useActionState, useEffect } from "react";
+import { useActionState, useEffect, useState } from "react";
 import { toast } from "sonner";
 
 import Button from "@/components/Button";
 import Input from "@/components/Input";
-import { revalidateExperienceData } from "@/lib/actions";
+import { revalidateData } from "@/lib/actions";
 
 export default function AdminPage() {
-  const [state, formAction] = useActionState(revalidateExperienceData, {
+  const [password, setPassword] = useState("");
+  const [state, formAction] = useActionState(revalidateData, {
     msg: "",
     status: 0,
   });
@@ -28,8 +29,17 @@ export default function AdminPage() {
           className="flex flex-col gap-4 justify-center items-center"
           action={formAction}
         >
-          <Input id="password" name="password" type="password" />
-          <Button type="submit" title="Revalidate" />
+          <Input
+            name="password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Button
+            type="submit"
+            title="Submit"
+            disabled={password.length === 0}
+          />
         </form>
       </main>
     </>
