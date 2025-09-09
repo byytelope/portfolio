@@ -12,7 +12,7 @@ const font = Inconsolata({
 
 export const metadata: Metadata = {
   title: "Mohamed Shadhaan",
-  description: "BSE Student / Developer",
+  description: "Software Engineer",
 };
 
 export default function RootLayout({
