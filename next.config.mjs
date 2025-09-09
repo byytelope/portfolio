@@ -2,7 +2,7 @@
 const nextConfig = {
   images: {},
   experimental: {
-    dynamicIO: true,
+    cacheComponents: true,
   },
   async headers() {
     return [

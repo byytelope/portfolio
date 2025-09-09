@@ -1,8 +1,8 @@
 import type { VariantProps } from "cva";
 import Link, { type LinkProps } from "next/link";
 
+import { RightUpArrowIcon } from "@/components/icons/RightUpArrowIcon";
 import { cva } from "@/cva.config";
-import { RightUpArrowIcon } from "./Icons";
 
 const linkButton = cva({
   base: "flex gap-1 w-fit rounded-md transition-colors duration-300 ease-out",
@@ -27,14 +27,14 @@ interface LinkButtonProps
   rel?: string;
 }
 
-export default function LinkButton({
+export const LinkButton = ({
   title,
   className,
   target = "_blank",
   rel = "noopener noreferrer",
   variant,
   ...props
-}: LinkButtonProps) {
+}: LinkButtonProps) => {
   return (
     <span className="inline-block">
       <Link
@@ -48,4 +48,4 @@ export default function LinkButton({
       </Link>
     </span>
   );
-}
+};

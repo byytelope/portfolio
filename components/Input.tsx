@@ -2,7 +2,7 @@ import { twMerge } from "tailwind-merge";
 
 interface InputProps extends React.ComponentProps<"input"> {}
 
-export default function Input({ className, ...props }: InputProps) {
+export const Input = ({ className, ...props }: InputProps) => {
   return (
     <input
       {...props}
@@ -12,4 +12,4 @@ export default function Input({ className, ...props }: InputProps) {
       )}
     />
   );
-}
+};

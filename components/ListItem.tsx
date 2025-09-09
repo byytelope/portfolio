@@ -1,4 +1,4 @@
-export default function ListItem({
+export const ListItem = ({
   title,
   description,
   href,
@@ -8,7 +8,7 @@ export default function ListItem({
   description: string;
   href?: string;
   trailing?: React.ReactNode;
-}) {
+}) => {
   return (
     <div>
       {/* Redundant div to fix divide radius */}
@@ -26,4 +26,4 @@ export default function ListItem({
       </a>
     </div>
   );
-}
+};

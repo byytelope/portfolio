@@ -22,15 +22,10 @@ interface ButtonProp
   className?: string;
 }
 
-export default function Button({
-  title,
-  className,
-  variant,
-  ...props
-}: ButtonProp) {
+export const Button = ({ title, className, variant, ...props }: ButtonProp) => {
   return (
     <button className={button({ variant, className })} {...props}>
       <span>{title}</span>
     </button>
   );
-}
+};

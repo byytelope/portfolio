@@ -1,6 +1,6 @@
-import Footer from "@/components/Footer";
-import LinkButton from "@/components/LinkButton";
-import ListItem from "@/components/ListItem";
+import { Footer } from "@/components/Footer";
+import { LinkButton } from "@/components/LinkButton";
+import { ListItem } from "@/components/ListItem";
 import {
   fetchCvLink,
   fetchExperienceData,
@@ -14,25 +14,21 @@ export default async function Home() {
 
   return (
     <>
-      <main className="flex flex-col w-full min-h-[calc(85dvh-6rem)] py-16 pb-32 md:py-24 xl:py-32 gap-8">
+      <main className="flex flex-col w-full min-h-[calc(85dvh-6rem)] py-16 pb-32 md:py-24 gap-8">
         <section className="flex flex-col justify-center gap-8 mb-8">
-          <h1 className="tracking-wider text-lg">Mohamed Shadhaan</h1>
+          <h1 className="tracking-wider text-lg">{"Mohamed Shadhaan"}</h1>
           <p>
-            I&apos;m a <i>Maldivian</i> student at&nbsp;
+            {"Hi there! I'm a software engineer from "}
             <LinkButton
-              href="https://university.taylors.edu.my/"
-              title="Taylor's University"
+              title="the Maldives"
+              href="https://maps.app.goo.gl/eUyRHAyPGMFgqL4k9"
               variant="underlined"
             />
-            , completing my Bachelor of Software Engineering with Honors. I have
-            a profound passion for all things programming.
+            {". I have a profound passion for all things programming."}
           </p>
         </section>
         <section className="flex flex-col justify-center gap-4">
-          <div className="flex gap-2">
-            <LinkButton href={cvLink.url} title="CV" />
-            <LinkButton title="Experience" href="/api/experience" />
-          </div>
+          <LinkButton title="Experience" href="/api/experience" />
           <div className="flex flex-col gap-2">
             {experienceData.map((experience) => (
               <ListItem
@@ -51,9 +47,7 @@ export default async function Home() {
           </div>
         </section>
         <section className="flex flex-col justify-center gap-4">
-          <div className="flex gap-2">
-            <LinkButton title="Projects" href="/api/projects" />
-          </div>
+          <LinkButton title="Projects" href="/api/projects" />
           <div className="flex flex-col gap-2">
             {projectsData.map((project) => (
               <ListItem
@@ -66,7 +60,7 @@ export default async function Home() {
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer cvLink={cvLink.url} />
     </>
   );
 }
