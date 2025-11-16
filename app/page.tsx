@@ -1,3 +1,5 @@
+import { cacheTag } from "next/cache";
+
 import { Footer } from "@/components/Footer";
 import { LinkButton } from "@/components/LinkButton";
 import { ListItem } from "@/components/ListItem";
@@ -8,6 +10,9 @@ import {
 } from "@/lib/actions";
 
 export default async function Home() {
+  "use cache";
+  cacheTag("home");
+
   const experienceData = await fetchExperienceData();
   const projectsData = await fetchProjectsData();
   const cvLink = await fetchCvLink();
@@ -27,6 +32,7 @@ export default async function Home() {
             {". I have a profound passion for all things programming."}
           </p>
         </section>
+
         <section className="flex flex-col justify-center gap-4">
           <LinkButton title="Experience" href="/api/experience" />
           <div className="flex flex-col gap-2">
@@ -46,6 +52,7 @@ export default async function Home() {
             ))}
           </div>
         </section>
+
         <section className="flex flex-col justify-center gap-4">
           <LinkButton title="Projects" href="/api/projects" />
           <div className="flex flex-col gap-2">
@@ -55,11 +62,17 @@ export default async function Home() {
                 title={project.name}
                 description={project.description}
                 href={project.url}
+                trailing={
+                  <span className="font-light text-right whitespace-pre-line">
+                    {project.detail}
+                  </span>
+                }
               />
             ))}
           </div>
         </section>
       </main>
+
       <Footer cvLink={cvLink.url} />
     </>
   );

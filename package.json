@@ -1,9 +1,9 @@
 {
   "name": "portfolio",
-  "version": "2.9.0",
+  "version": "2.10.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "biome check",
@@ -15,11 +15,10 @@
     "@vercel/blob": "latest",
     "@vercel/speed-insights": "latest",
     "cva": "beta",
-    "motion": "^12.23.12",
+    "motion": "latest",
     "next": "canary",
-    "react": "latest",
-    "react-dom": "latest",
-    "sonner": "latest",
+    "react": "canary",
+    "react-dom": "canary",
     "tailwind-merge": "latest"
   },
   "devDependencies": {
@@ -27,6 +26,7 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "babel-plugin-react-compiler": "latest",
     "tailwindcss": "latest",
     "typescript": "latest"
   },

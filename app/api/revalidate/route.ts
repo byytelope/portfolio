@@ -1,33 +1,17 @@
-import { revalidatePath, revalidateTag } from "next/cache";
-
-import { type CacheTag, CacheTags } from "@/lib/types";
-
-interface ReqBody {
-  tag: CacheTag;
-  key: string;
-}
+import { updateTag } from "next/cache";
 
 export async function POST(req: Request) {
   try {
-    const { tag, key }: ReqBody = await req.json();
+    const { key }: { key: string } = await req.json();
 
     if (key !== process.env.ADMIN_KEY) {
       return Response.json({ error: "Invalid secret key." }, { status: 403 });
     }
 
-    if (!Object.values(CacheTags).includes(tag)) {
-      return Response.json(
-        {
-          msg: `Invalid tag. Must be one of: \`${Object.values(CacheTags).join(", ")}\``,
-        },
-        { status: 400 },
-      );
-    }
-    revalidateTag(tag);
-    revalidatePath("/");
+    updateTag("home");
 
     return Response.json(
-      { msg: `Successfully revalidated \`${tag}\`.` },
+      { msg: "Successfully revalidated cache" },
       { status: 200 },
     );
   } catch (err) {

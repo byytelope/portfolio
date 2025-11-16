@@ -1,8 +1,10 @@
-/** @type {import("next").NextConfig} */
-const nextConfig = {
-  images: {},
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  reactCompiler: true,
+  cacheComponents: true,
   experimental: {
-    cacheComponents: true,
+    turbopackFileSystemCacheForDev: true,
   },
   async headers() {
     return [

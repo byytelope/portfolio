@@ -13,12 +13,5 @@ export interface ProjectsData {
   description: string;
   slug: string;
   url?: string;
+  detail: string;
 }
-
-export const CacheTags = {
-  cvLink: "cv-link",
-  experienceData: "experience-data",
-  projectsData: "projects-data",
-} as const;
-
-export type CacheTag = (typeof CacheTags)[keyof typeof CacheTags];

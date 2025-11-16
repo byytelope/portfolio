@@ -15,14 +15,19 @@ const button = cva({
   },
 });
 
-interface ButtonProp
+interface ButtonProps
   extends React.ComponentProps<"button">,
     VariantProps<typeof button> {
   title: string;
   className?: string;
 }
 
-export const Button = ({ title, className, variant, ...props }: ButtonProp) => {
+export const Button = ({
+  title,
+  className,
+  variant,
+  ...props
+}: ButtonProps) => {
   return (
     <button className={button({ variant, className })} {...props}>
       <span>{title}</span>

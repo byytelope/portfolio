@@ -1,41 +1,63 @@
 "use client";
 
-import { useActionState, useEffect, useState } from "react";
-import { toast } from "sonner";
+import { useActionState, useEffect, useRef, useState } from "react";
 
 import { Button } from "@/components/Button";
 import { Input } from "@/components/Input";
+import {
+  LockKeyholeIcon,
+  type LockKeyholeIconHandle,
+} from "@/components/icons/LockKeyholeIcon";
+import { Message } from "@/components/Message";
 import { revalidateData } from "@/lib/actions";
 
 export default function AdminPage() {
+  const iconRef = useRef<LockKeyholeIconHandle>(null);
   const [password, setPassword] = useState("");
-  const [state, formAction] = useActionState(revalidateData, {
+  const [formState, formAction] = useActionState(revalidateData, {
     msg: "",
     status: 0,
   });
 
   useEffect(() => {
-    if (state.status === 200) {
-      toast.success(state.msg);
+    if (formState.status === 200) {
+      iconRef.current?.startAnimation();
     } else {
-      toast.error(state.msg);
+      iconRef.current?.stopAnimation();
     }
-  }, [state]);
+  }, [formState.status]);
 
   return (
-    <main className="flex flex-col w-full min-h-screen py-16 md:py-24 xl:py-32 gap-8 justify-center items-center">
+    <main className="flex flex-col w-fit min-h-screen py-16 md:py-24 xl:py-32 gap-4 justify-center items-start">
+      <div className="flex items-center gap-4">
+        <LockKeyholeIcon size={16} ref={iconRef} />
+        <span>{"Enter password to refresh data"}</span>
+      </div>
+
       <form
-        className="flex flex-col gap-4 justify-center items-center"
+        className="flex flex-col gap-4 justify-center items-start w-full"
         action={formAction}
       >
-        <Input
-          name="password"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <Button type="submit" title="Submit" disabled={password.length === 0} />
+        <div className="flex gap-2 w-full">
+          <Input
+            name="password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="w-full"
+          />
+
+          <Button
+            type="submit"
+            title="Submit"
+            disabled={password.length === 0}
+          />
+        </div>
       </form>
+
+      <Message variant={formState.status === 200 ? "normal" : "error"}>
+        <p>{formState.msg}</p>
+      </Message>
     </main>
   );
 }
