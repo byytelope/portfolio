@@ -25,8 +25,12 @@ export default function RootLayout({
         className={`${font.className} bg-stone-50 text-stone-500 dark:bg-stone-900 flex flex-col justify-center items-center mx-auto w-full max-w-5xl px-8 relative`}
       >
         {children}
-        <Analytics />
-        <SpeedInsights />
+        {process.env.NODE_ENV === "production" && (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        )}
       </body>
     </html>
   );

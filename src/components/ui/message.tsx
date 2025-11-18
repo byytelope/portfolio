@@ -3,7 +3,7 @@ import type { VariantProps } from "cva";
 import { cva } from "@/cva.config";
 
 const message = cva({
-  base: "rounded px-2 text-sm",
+  base: "rounded px-1 text-sm",
   variants: {
     variant: {
       normal:
@@ -22,5 +22,5 @@ interface MessageProps extends VariantProps<typeof message> {
 }
 
 export const Message = ({ className, variant, ...props }: MessageProps) => {
-  return <div className={message({ variant, className })} {...props} />;
+  return <span className={message({ variant, className })} {...props} />;
 };

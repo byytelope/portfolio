@@ -1,5 +1,4 @@
 "use client";
-
 import { motion, useAnimation } from "motion/react";
 import type { HTMLAttributes } from "react";
 import { forwardRef, useImperativeHandle, useRef } from "react";
@@ -16,7 +15,7 @@ interface LockKeyholeIconProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const LockKeyholeIcon = forwardRef<LockKeyholeIconHandle, LockKeyholeIconProps>(
-  ({ className, size = 28, ...props }, ref) => {
+  ({ className, size = 20, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
 

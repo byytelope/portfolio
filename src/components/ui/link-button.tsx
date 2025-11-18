@@ -1,7 +1,7 @@
 import type { VariantProps } from "cva";
 import Link, { type LinkProps } from "next/link";
 
-import { RightUpArrowIcon } from "@/components/icons/RightUpArrowIcon";
+import { RightUpArrowIcon } from "@/components/icons/right-up-arrow-icon";
 import { cva } from "@/cva.config";
 
 const linkButton = cva({

@@ -1,10 +1,12 @@
-import { IconLink } from "@/components/IconLink";
-import { AtSignIcon } from "@/components/icons/AtSignIcon";
-import { GithubIcon } from "@/components/icons/GithubIcon";
-import { InstagramIcon } from "@/components/icons/InstagramIcon";
-import { FileTextIcon } from "./icons/FileText";
+import { Suspense } from "react";
 
-export const Footer = ({ cvLink }: { cvLink: string }) => {
+import { CvButtonWrapper } from "@/app/cv-button-wrapper";
+import { AtSignIcon } from "@/components/icons/at-sign-icon";
+import { GithubIcon } from "@/components/icons/github-icon";
+import { InstagramIcon } from "@/components/icons/instagram-icon";
+import { IconLink } from "@/components/ui/icon-link";
+
+export const Footer = () => {
   return (
     <footer className="fixed bottom-0 left-1/2 -translate-x-1/2 flex items-center justify-center gap-2 mt-auto mb-4 lg:mb-8 h-fit w-fit z-10">
       <div className="flex items-center gap-5 h-fit w-fit px-4 py-3 bg-stone-200/75 dark:bg-stone-800/75 backdrop-blur-md rounded-full">
@@ -24,9 +26,10 @@ export const Footer = ({ cvLink }: { cvLink: string }) => {
           label="Email link"
         />
       </div>
-      <div className="flex items-center gap-5 h-fit w-fit px-4 py-3 bg-stone-200/75 dark:bg-stone-800/75 backdrop-blur-md rounded-full">
-        <IconLink href={cvLink} icon={<FileTextIcon />} label="Download CV" />
-      </div>
+
+      <Suspense>
+        <CvButtonWrapper />
+      </Suspense>
     </footer>
   );
 };
