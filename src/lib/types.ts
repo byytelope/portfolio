@@ -21,6 +21,3 @@ export const CacheTags = {
   ProjectsData: { title: "Projects Data", tag: "projects_data" },
   CvLink: { title: "CV Link", tag: "cv_link" },
 } as const;
-
-export type CacheTag = (typeof CacheTags)[keyof typeof CacheTags]["tag"];
-export type CacheTitle = (typeof CacheTags)[keyof typeof CacheTags]["title"];

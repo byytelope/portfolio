@@ -7,7 +7,7 @@ export const Input = ({ className, ...props }: InputProps) => {
     <input
       {...props}
       className={twMerge(
-        "bg-stone-100 dark:bg-stone-800 ring ring-stone-300 dark:ring-stone-700 rounded-md px-1",
+        "bg-stone-100 dark:bg-stone-800 ring ring-stone-300 dark:ring-stone-700 rounded-md h-6 px-1",
         className,
       )}
     />

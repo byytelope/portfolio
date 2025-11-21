@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "2.10.1",
+  "version": "2.11.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -15,6 +15,7 @@
     "@vercel/blob": "latest",
     "@vercel/speed-insights": "latest",
     "cva": "beta",
+    "lucide-react": "latest",
     "motion": "latest",
     "next": "canary",
     "react": "canary",
