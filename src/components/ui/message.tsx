@@ -1,8 +1,6 @@
-import type { VariantProps } from "cva";
+import { tv, type VariantProps } from "tailwind-variants";
 
-import { cva } from "@/cva.config";
-
-const message = cva({
+const message = tv({
   base: "rounded px-1 text-sm",
   variants: {
     variant: {

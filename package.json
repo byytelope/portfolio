@@ -14,13 +14,13 @@
     "@vercel/analytics": "latest",
     "@vercel/blob": "latest",
     "@vercel/speed-insights": "latest",
-    "cva": "beta",
     "lucide-react": "latest",
     "motion": "latest",
     "next": "canary",
     "react": "canary",
     "react-dom": "canary",
-    "tailwind-merge": "latest"
+    "tailwind-merge": "latest",
+    "tailwind-variants": "^3.2.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "latest",

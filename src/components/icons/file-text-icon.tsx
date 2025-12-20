@@ -2,8 +2,7 @@
 import { motion, useAnimation } from "motion/react";
 import type { HTMLAttributes } from "react";
 import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
-
-import { cn } from "@/lib/utils";
+import { cn } from "tailwind-variants";
 
 export interface FileTextIconHandle {
   startAnimation: () => void;
@@ -100,7 +99,6 @@ export const FileTextIcon = forwardRef<FileTextIconHandle, FileTextIconProps>(
                 x2: [10, 10, 10],
                 transition: {
                   duration: 0.7,
-                  delay: 0.3,
                 },
               },
             }}
@@ -121,7 +119,7 @@ export const FileTextIcon = forwardRef<FileTextIconHandle, FileTextIconProps>(
                 x2: [16, 16, 16],
                 transition: {
                   duration: 0.7,
-                  delay: 0.5,
+                  delay: 0.2,
                   ease: "easeInOut",
                 },
               },
@@ -143,7 +141,7 @@ export const FileTextIcon = forwardRef<FileTextIconHandle, FileTextIconProps>(
                 x2: [16, 16, 16],
                 transition: {
                   duration: 0.7,
-                  delay: 0.7,
+                  delay: 0.4,
                   ease: "easeInOut",
                 },
               },

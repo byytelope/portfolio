@@ -1,10 +1,9 @@
-import type { VariantProps } from "cva";
 import Link, { type LinkProps } from "next/link";
+import { tv, type VariantProps } from "tailwind-variants";
 
 import { RightUpArrowIcon } from "@/components/icons/right-up-arrow-icon";
-import { cva } from "@/cva.config";
 
-const linkButton = cva({
+const linkButton = tv({
   base: "flex gap-1 w-fit rounded-md transition-colors duration-300 ease-out",
   variants: {
     variant: {

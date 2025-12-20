@@ -8,6 +8,7 @@ export const ProjectsSection = async () => {
   return (
     <section className="flex flex-col justify-center gap-4">
       <LinkButton title="Projects" href="/api/projects" prefetch={false} />
+
       <div className="flex flex-col gap-2">
         {projectsData.map((project) => (
           <ListItem

@@ -2,8 +2,7 @@
 import { motion, useAnimation } from "motion/react";
 import type { HTMLAttributes } from "react";
 import { forwardRef, useImperativeHandle, useRef } from "react";
-
-import { cn } from "@/lib/utils";
+import { cn } from "tailwind-variants";
 
 export interface LockKeyholeIconHandle {
   startAnimation: () => void;

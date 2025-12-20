@@ -1,8 +1,6 @@
-import type { VariantProps } from "cva";
+import { tv, type VariantProps } from "tailwind-variants";
 
-import { cva } from "@/cva.config";
-
-const button = cva({
+const button = tv({
   base: "flex gap-1 w-fit h-fit rounded-md transition-colors duration-300 ease-out disabled:pointer-events-none disabled:opacity-50",
   variants: {
     variant: {
