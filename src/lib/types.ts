@@ -1,18 +1,17 @@
-export interface ExperienceData {
+export interface HomeData {
   id: string;
   name: string;
   description: string;
   url?: string;
+}
+
+export interface ExperienceData extends HomeData {
   startYear: number;
   endYear?: number;
 }
 
-export interface ProjectsData {
-  id: string;
-  name: string;
-  description: string;
+export interface ProjectsData extends HomeData {
   slug: string;
-  url?: string;
   detail: string;
 }
 

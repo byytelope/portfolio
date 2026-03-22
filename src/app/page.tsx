@@ -1,9 +1,9 @@
 import { Suspense } from "react";
 
-import { ExperienceSection } from "@/app/experience-section";
-import { Footer } from "@/app/footer";
-import { ProjectsSection } from "@/app/projects-section";
+import { Footer } from "@/components/ui/footer";
+import { HomeSection } from "@/components/ui/home-section";
 import { LinkButton } from "@/components/ui/link-button";
+import { fetchExperienceData, fetchProjectsData } from "@/lib/actions";
 
 export default async function Home() {
   return (
@@ -23,11 +23,30 @@ export default async function Home() {
         </section>
 
         <Suspense>
-          <ExperienceSection />
+          <HomeSection
+            promise={fetchExperienceData}
+            title="Experience"
+            link="/api/experience"
+            trailing={(data) => (
+              <span className="font-light text-right whitespace-pre-line">
+                {data.startYear}&nbsp;&mdash;&nbsp;
+                {data.endYear ?? "Present"}
+              </span>
+            )}
+          />
         </Suspense>
 
         <Suspense>
-          <ProjectsSection />
+          <HomeSection
+            promise={fetchProjectsData}
+            title="Projects"
+            link="/api/projects"
+            trailing={(data) => (
+              <span className="font-light text-right whitespace-pre-line">
+                {data.detail}
+              </span>
+            )}
+          />
         </Suspense>
       </main>
 

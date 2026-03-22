@@ -69,7 +69,7 @@ export const fetchProjectsData = async () => {
   const sql = neon(process.env.DATABASE_URL ?? "");
   console.log("Fetching projects data...");
 
-  const rows = (await sql`SELECT * FROM projects;`) as ProjectsData[];
+  const rows = (await sql`SELECT * FROM projects_data;`) as ProjectsData[];
 
   return rows;
 };
