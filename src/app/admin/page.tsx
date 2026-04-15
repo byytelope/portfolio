@@ -1,11 +1,15 @@
-import { Suspense } from "react";
+import { redirect } from "next/navigation";
 
-import AdminWrapper from "./wrapper";
+import { getSession } from "@/lib/auth/session";
 
-export default function AdminPage() {
-  return (
-    <Suspense>
-      <AdminWrapper />
-    </Suspense>
-  );
+import AdminClient from "./client";
+
+export default async function AdminPage() {
+  const session = await getSession();
+
+  if (!session) {
+    redirect("/admin/login");
+  }
+
+  return <AdminClient />;
 }
