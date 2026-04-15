@@ -15,7 +15,7 @@ export const FooterLinks = () => {
       className="flex h-fit w-fit items-center gap-5 rounded-full bg-stone-200/75 px-4 py-3 backdrop-blur-md dark:bg-stone-800/75"
     >
       <IconLink
-        href="https://instagram.com/mohamed_shadhaan"
+        href="https://instagram.com/_shadhaan"
         icon={<InstagramIcon />}
         label="Instagram link"
       />
