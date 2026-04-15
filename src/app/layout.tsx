@@ -1,6 +1,7 @@
+import type { Metadata } from "next";
+
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import type { Metadata } from "next";
 import { Inconsolata } from "next/font/google";
 
 import "@/app/globals.css";
@@ -14,15 +15,11 @@ export const metadata: Metadata = {
   description: "Software Engineer",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body
-        className={`${font.className} bg-stone-50 text-stone-500 dark:bg-stone-900 flex flex-col justify-center items-center mx-auto w-full max-w-5xl px-8 relative`}
+        className={`${font.className} relative mx-auto flex w-full max-w-5xl flex-col items-center justify-center bg-stone-50 px-8 text-stone-500 dark:bg-stone-900`}
       >
         {children}
         {process.env.NODE_ENV === "production" && (

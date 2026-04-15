@@ -1,6 +1,8 @@
 "use client";
-import { motion, useAnimation } from "motion/react";
+
 import type { HTMLAttributes } from "react";
+
+import { motion, useAnimation } from "motion/react";
 import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 import { cn } from "tailwind-variants";
 
@@ -11,10 +13,11 @@ export interface FileTextIconHandle {
 
 interface FileTextIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
+  animateOnHover?: boolean;
 }
 
 export const FileTextIcon = forwardRef<FileTextIconHandle, FileTextIconProps>(
-  ({ onMouseEnter, onMouseLeave, className, size = 20, ...props }, ref) => {
+  ({ onMouseEnter, onMouseLeave, className, size = 20, animateOnHover = false, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
 
@@ -52,8 +55,8 @@ export const FileTextIcon = forwardRef<FileTextIconHandle, FileTextIconProps>(
     return (
       <div
         className={cn(className)}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+        onMouseEnter={animateOnHover ? handleMouseEnter : undefined}
+        onMouseLeave={animateOnHover ? handleMouseLeave : undefined}
         {...props}
       >
         <motion.svg

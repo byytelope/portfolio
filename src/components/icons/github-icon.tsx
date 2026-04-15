@@ -1,7 +1,9 @@
 "use client";
+
 import type { Variants } from "motion/react";
-import { motion, useAnimation } from "motion/react";
 import type { HTMLAttributes } from "react";
+
+import { motion, useAnimation } from "motion/react";
 import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 import { cn } from "tailwind-variants";
 
@@ -12,6 +14,7 @@ export interface GithubIconHandle {
 
 interface GithubIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
+  animateOnHover?: boolean;
 }
 
 const bodyVariants: Variants = {
@@ -60,7 +63,7 @@ const tailVariants: Variants = {
 };
 
 export const GithubIcon = forwardRef<GithubIconHandle, GithubIconProps>(
-  ({ onMouseEnter, onMouseLeave, className, size = 20, ...props }, ref) => {
+  ({ onMouseEnter, onMouseLeave, className, size = 20, animateOnHover = false, ...props }, ref) => {
     const bodyControls = useAnimation();
     const tailControls = useAnimation();
     const isControlledRef = useRef(false);
@@ -109,8 +112,8 @@ export const GithubIcon = forwardRef<GithubIconHandle, GithubIconProps>(
     return (
       <div
         className={cn(className)}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+        onMouseEnter={animateOnHover ? handleMouseEnter : undefined}
+        onMouseLeave={animateOnHover ? handleMouseLeave : undefined}
         {...props}
       >
         <svg

@@ -1,16 +1,20 @@
 {
   "name": "portfolio",
-  "version": "2.12.0",
+  "version": "2.20.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "biome check",
-    "format": "biome format --write"
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check"
   },
   "dependencies": {
     "@neondatabase/serverless": "latest",
+    "@simplewebauthn/browser": "latest",
+    "@simplewebauthn/server": "latest",
     "@vercel/analytics": "latest",
     "@vercel/blob": "latest",
     "@vercel/speed-insights": "latest",
@@ -28,6 +32,8 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "babel-plugin-react-compiler": "latest",
+    "oxfmt": "latest",
+    "oxlint": "latest",
     "tailwindcss": "latest",
     "typescript": "latest"
   },

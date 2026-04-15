@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "motion/react";
 
 import { AtSignIcon } from "@/components/icons/at-sign-icon";
@@ -18,11 +19,7 @@ export const FooterLinks = () => {
         icon={<InstagramIcon />}
         label="Instagram link"
       />
-      <IconLink
-        href="https://github.com/byytelope"
-        icon={<GithubIcon />}
-        label="GitHub link"
-      />
+      <IconLink href="https://github.com/byytelope" icon={<GithubIcon />} label="GitHub link" />
       <IconLink
         href="mailto:hello@shadhaan.me?subject=Hi!%20I%20want%20to%20hire%20you"
         icon={<AtSignIcon />}

@@ -1,11 +1,10 @@
-import { tv, type VariantProps } from "tailwind-variants";
+import { type VariantProps, tv } from "tailwind-variants";
 
 const message = tv({
   base: "rounded px-1 text-sm",
   variants: {
     variant: {
-      normal:
-        "bg-stone-200 dark:bg-stone-800 text-stone-700 dark:text-stone-400",
+      normal: "bg-stone-200 dark:bg-stone-800 text-stone-700 dark:text-stone-400",
       error: "bg-red-200 dark:bg-red-900 text-red-900 dark:text-red-200",
     },
   },

@@ -13,7 +13,7 @@ export const IconLink = ({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="flex items-center justify-center -m-1 h-6 w-6 text-stone-600 dark:text-stone-400 rounded-lg"
+      className="-m-1 flex h-6 w-6 items-center justify-center rounded-lg text-stone-600 dark:text-stone-400"
     >
       {icon}
     </a>

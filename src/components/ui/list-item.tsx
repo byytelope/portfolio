@@ -14,13 +14,13 @@ export const ListItem = ({
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="flex gap-4 py-2 px-3 hover:bg-stone-200/50 dark:hover:bg-stone-800/50 transition ease-out duration-300 rounded-md"
+      className="flex gap-4 rounded-md px-3 py-2 transition duration-300 ease-out hover:bg-stone-200/50 dark:hover:bg-stone-800/50"
     >
-      <div className="flex flex-col w-full md:w-fit">
+      <div className="flex w-full flex-col md:w-fit">
         <span>{title}</span>
         <span className="text-stone-400">{description}</span>
       </div>
-      <div className="flex ml-auto items-center">{trailing}</div>
+      <div className="ml-auto flex items-center">{trailing}</div>
     </a>
   );
 };

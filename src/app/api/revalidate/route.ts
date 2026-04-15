@@ -1,23 +1,40 @@
-import { updateTag } from "next/cache";
+import { revalidateTag } from "next/cache";
+
+import { getSession } from "@/lib/auth/session";
+import { CacheTags } from "@/lib/types";
 
 export async function POST(req: Request) {
   try {
-    const { key }: { key: string } = await req.json();
+    const session = await getSession();
+    if (!session) return Response.json({ msg: "Unauthorized" }, { status: 401 });
 
-    if (key !== process.env.ADMIN_KEY) {
-      return Response.json({ error: "Invalid secret key." }, { status: 403 });
+    const formData = await req.formData();
+    const tag = formData.get("tag") as string;
+
+    if (tag.trim().length === 0) {
+      return Response.json({ msg: "Select a cache tag" }, { status: 400 });
     }
 
-    updateTag("home");
+    const cacheTags = Object.values(CacheTags).map((item) => item.tag) as string[];
+
+    if (!cacheTags.includes(tag)) {
+      return Response.json({ msg: "Invalid cache tag" }, { status: 400 });
+    }
+
+    revalidateTag(tag, "max");
+
+    const tagTitle = Object.values(CacheTags).find((value) => value.tag === tag)?.title;
+
+    console.log(`${tagTitle} marked for revalidation`);
 
     return Response.json(
-      { msg: "Successfully revalidated cache" },
+      { msg: `Successfully marked ${tagTitle} for revalidation` },
       { status: 200 },
     );
   } catch (err) {
     console.error("Error handling revalidation:", err);
     return Response.json(
-      { msg: "An error occurred while handling revalidation.", body: err },
+      { msg: "An error occurred while handling revalidation." },
       { status: 500 },
     );
   }

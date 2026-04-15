@@ -1,4 +1,5 @@
-import { fetchCvLink } from "@/lib/actions";
+import { fetchCvLink } from "@/lib/data/actions";
+
 import { CvButton } from "./cv-button";
 
 export const CvButtonWrapper = async () => {

@@ -1,6 +1,8 @@
 "use client";
-import { motion, useAnimation } from "motion/react";
+
 import type { HTMLAttributes } from "react";
+
+import { motion, useAnimation } from "motion/react";
 import { forwardRef, useImperativeHandle, useRef } from "react";
 import { cn } from "tailwind-variants";
 

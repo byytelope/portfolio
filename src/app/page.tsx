@@ -3,14 +3,14 @@ import { Suspense } from "react";
 import { Footer } from "@/components/ui/footer";
 import { HomeSection } from "@/components/ui/home-section";
 import { LinkButton } from "@/components/ui/link-button";
-import { fetchExperienceData, fetchProjectsData } from "@/lib/actions";
+import { fetchExperienceData, fetchProjectsData } from "@/lib/data/actions";
 
 export default async function Home() {
   return (
     <>
-      <main className="flex flex-col w-full min-h-[calc(85dvh-6rem)] py-16 pb-32 md:py-24 gap-8">
-        <section className="flex flex-col justify-center gap-8 mb-8">
-          <h1 className="tracking-wider text-lg">{"Mohamed Shadhaan"}</h1>
+      <main className="flex min-h-[calc(85dvh-6rem)] w-full flex-col gap-8 py-16 pb-32 md:py-24">
+        <section className="mb-8 flex flex-col justify-center gap-8">
+          <h1 className="text-lg tracking-wider">{"Mohamed Shadhaan"}</h1>
           <p>
             {"Hi there! I'm a software engineer from "}
             <LinkButton
@@ -28,7 +28,7 @@ export default async function Home() {
             title="Experience"
             link="/api/experience"
             trailing={(data) => (
-              <span className="font-light text-right whitespace-pre-line">
+              <span className="text-right font-light whitespace-pre-line">
                 {data.startYear}&nbsp;&mdash;&nbsp;
                 {data.endYear ?? "Present"}
               </span>
@@ -42,9 +42,7 @@ export default async function Home() {
             title="Projects"
             link="/api/projects"
             trailing={(data) => (
-              <span className="font-light text-right whitespace-pre-line">
-                {data.detail}
-              </span>
+              <span className="text-right font-light whitespace-pre-line">{data.detail}</span>
             )}
           />
         </Suspense>

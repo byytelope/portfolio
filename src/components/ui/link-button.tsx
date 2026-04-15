@@ -1,5 +1,5 @@
 import Link, { type LinkProps } from "next/link";
-import { tv, type VariantProps } from "tailwind-variants";
+import { type VariantProps, tv } from "tailwind-variants";
 
 import { RightUpArrowIcon } from "@/components/icons/right-up-arrow-icon";
 
@@ -17,9 +17,7 @@ const linkButton = tv({
   },
 });
 
-interface LinkButtonProps
-  extends Omit<LinkProps, "children">,
-    VariantProps<typeof linkButton> {
+interface LinkButtonProps extends Omit<LinkProps, "children">, VariantProps<typeof linkButton> {
   title: string;
   className?: string;
   target?: React.HTMLAttributeAnchorTarget;
@@ -36,12 +34,7 @@ export const LinkButton = ({
 }: LinkButtonProps) => {
   return (
     <span className="inline-block">
-      <Link
-        target={target}
-        rel={rel}
-        className={linkButton({ variant, className })}
-        {...props}
-      >
+      <Link target={target} rel={rel} className={linkButton({ variant, className })} {...props}>
         <span>{title}</span>
         <RightUpArrowIcon />
       </Link>

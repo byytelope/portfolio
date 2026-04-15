@@ -1,7 +1,9 @@
 "use client";
+
 import type { Variants } from "motion/react";
-import { motion, useAnimation } from "motion/react";
 import type { HTMLAttributes } from "react";
+
+import { motion, useAnimation } from "motion/react";
 import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 import { cn } from "tailwind-variants";
 
@@ -12,6 +14,7 @@ export interface AtSignIconHandle {
 
 interface AtSignIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
+  animateOnHover?: boolean;
 }
 
 const circleVariants: Variants = {
@@ -59,7 +62,7 @@ const pathVariants: Variants = {
 };
 
 export const AtSignIcon = forwardRef<AtSignIconHandle, AtSignIconProps>(
-  ({ onMouseEnter, onMouseLeave, className, size = 20, ...props }, ref) => {
+  ({ onMouseEnter, onMouseLeave, className, size = 20, animateOnHover = false, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
 
@@ -97,8 +100,8 @@ export const AtSignIcon = forwardRef<AtSignIconHandle, AtSignIconProps>(
     return (
       <div
         className={cn(className)}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+        onMouseEnter={animateOnHover ? handleMouseEnter : undefined}
+        onMouseLeave={animateOnHover ? handleMouseLeave : undefined}
         {...props}
       >
         <svg
@@ -113,13 +116,7 @@ export const AtSignIcon = forwardRef<AtSignIconHandle, AtSignIconProps>(
           strokeLinejoin="round"
         >
           <title>Mail</title>
-          <motion.circle
-            variants={circleVariants}
-            animate={controls}
-            cx="12"
-            cy="12"
-            r="4"
-          />
+          <motion.circle variants={circleVariants} animate={controls} cx="12" cy="12" r="4" />
           <motion.path
             variants={pathVariants}
             animate={controls}

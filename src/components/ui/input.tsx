@@ -1,6 +1,6 @@
 import { twMerge } from "tailwind-merge";
 
-interface InputProps extends React.ComponentProps<"input"> {}
+type InputProps = React.ComponentProps<"input">;
 
 export const Input = ({ className, ...props }: InputProps) => {
   return (

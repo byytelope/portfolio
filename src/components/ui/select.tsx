@@ -1,7 +1,7 @@
 import { ChevronsUpDown } from "lucide-react";
 import { twMerge } from "tailwind-merge";
 
-interface SelectProps extends React.ComponentProps<"select"> {}
+type SelectProps = React.ComponentProps<"select">;
 
 export const Select = ({ className, ...props }: SelectProps) => {
   return (
